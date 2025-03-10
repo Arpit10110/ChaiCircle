@@ -1,0 +1,10 @@
+@import "tailwindcss";
+
+html{
+    font-size: 75%;
+}
+
+body{
+    background-color: black;
+    color: white;
+}
