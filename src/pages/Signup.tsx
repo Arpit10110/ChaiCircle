@@ -5,7 +5,7 @@ const Signup = () => {
   return (
    <>
     <Navbar/>
-    <Signupbox/>/
+    <Signupbox/>
    </>
   )
 }

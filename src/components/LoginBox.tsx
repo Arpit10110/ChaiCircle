@@ -1,19 +1,56 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
 const LoginBox = () => {
+    const navigate = useNavigate();
     const [EmailIn, SetEmailIn] = useState<string>('');
     const [PasswordIn, SetPasswordIn] = useState<string>('');
+
+
+    const submit = async(e:any)=>{
+        e.preventDefault();
+        try {
+            const userdata = {
+                email:EmailIn,
+                password:PasswordIn
+            }
+            const {data} = await axios.post(`${import.meta.env.VITE_HOST}/login`,userdata,{
+                withCredentials: true
+            })
+            if(data.success == true){
+                localStorage.setItem('token',data.token);
+                navigate('/');
+            }else{
+                toast.warn(data.message, {
+                    position: "top-right",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: false,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "dark",
+                    });
+            }
+        } catch (error) {
+            console.error(error);
+        }
+    }
+
+
   return (
     <>
         <div className='flex justify-center cursor-default  ' >
-            <form action="" className='mt-[8rem] bg-gray-800 w-[40%] p-[1rem] rounded-[5px] flex flex-col gap-[1rem] ' >
+            <form onSubmit={submit} className='mt-[8rem] bg-gray-800 w-[40%] p-[1rem] rounded-[5px] flex flex-col gap-[1rem] ' >
                 <div>
                     <h3 className='text-[1.5rem] font-semibold ' >Email</h3>
                     <input className='bg-white text-black w-full text-[1.3rem] font-semibold p-[0.3rem] rounded-[5px]  ' type="text" value={EmailIn} onChange={(e) => SetEmailIn(e.target.value)}   required/>
                 </div>
                 <div>
                     <h3 className='text-[1.5rem] font-semibold ' >Password</h3>
-                    <input className='bg-white text-black w-full text-[1.3rem] font-semibold p-[0.3rem] rounded-[5px]  ' value={PasswordIn} onChange={(e) => SetPasswordIn(e.target.value)} required />
+                    <input type='password' className='bg-white text-black w-full text-[1.3rem] font-semibold p-[0.3rem] rounded-[5px]  ' value={PasswordIn} onChange={(e) => SetPasswordIn(e.target.value)} required />
                 </div>
                 <div className='flex justify-center items-center flex-col gap-[5px]' >
                     <button className='text-[1.5rem] bg-blue-600 font-semibold px-[1rem] py-[0.3rem] rounded-[5px] hover:scale-[1.02] transition-all cursor-pointer  ' >LogIn</button>
@@ -21,6 +58,18 @@ const LoginBox = () => {
                 </div>
             </form>
         </div>
+        <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick={false}
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"
+        />
     </>
   )
 }
