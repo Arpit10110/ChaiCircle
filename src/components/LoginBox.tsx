@@ -19,9 +19,10 @@ const LoginBox = () => {
             const {data} = await axios.post(`${import.meta.env.VITE_HOST}/login`,userdata,{
                 withCredentials: true
             })
+            console.log(data)
             if(data.success == true){
-                localStorage.setItem('token',data.token);
                 navigate('/');
+                localStorage.setItem('token',data.token);
             }else{
                 toast.warn(data.message, {
                     position: "top-right",
