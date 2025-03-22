@@ -29,7 +29,7 @@ const Navbar = () => {
           <Link to="/message" title="message"><ChatIcon className="!text-[2.5rem]  hover:scale-[1.1] transition-all "  /></Link>
           {
             User?
-            <Link to="/profile" className="text-white bg-[#f3771e] text-[2rem] px-[1rem] rounded-[5px] hover:scale-[1.05] transition-all " title="login">Profile</Link>:
+            <Link to="/profile" className="text-white bg-[#f3771e] text-[2rem] px-[1rem] rounded-[5px] hover:scale-[1.05] transition-all " title="profile">Profile</Link>:
             <Link to="/login" className="text-white bg-[#f3771e] text-[2rem] px-[1rem] rounded-[5px] hover:scale-[1.05] transition-all " title="login">Login</Link>
           }
         </div>
