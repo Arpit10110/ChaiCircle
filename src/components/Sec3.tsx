@@ -5,7 +5,7 @@ const Sec3 = () => {
     <>
         <div className="my-[8rem] px-[2rem] " >
             <div className="flex flex-wrap justify-around  items-center  " >
-                <div className="w-[50%] flex flex-col gap-[1rem] " >
+                <div className="w-[50%] flex flex-col gap-[1rem] max-[800px]:w-[60%] " >
                     <h1 className="text-[3rem] font-bold " > Discover & Explore 🌍</h1>
                     <p className="w-full text-[1.5rem] " >
                     Dive into a world of exciting content! Follow interesting people, explore trending posts, and stay updated with what’s happening in your circle. Whether it's a fun chai break or a deep conversation, your feed stays fresh and engaging!
@@ -16,7 +16,7 @@ const Sec3 = () => {
                 </div>
             </div>
             <div className="flex flex-wrap justify-around  items-center mt-[8rem] flex-row-reverse  " >
-                <div className="w-[50%] flex flex-col gap-[1rem] " >
+                <div className="w-[50%] flex flex-col gap-[1rem] max-[800px]:w-[60%] " >
                     <h1 className="text-[3rem] font-bold " >Secure & Private 🔒</h1>
                     <p className="w-full text-[1.5rem] " >
                     Your privacy matters! We provide a safe space where you control what you share. Connect with confidence, knowing that your conversations, posts, and interactions are protected, so you can focus on building meaningful connections.

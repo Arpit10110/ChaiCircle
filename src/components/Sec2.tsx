@@ -31,11 +31,11 @@ const Sec2 = () => {
   return (
     <>
         <div className="my-[5rem]" >
-            <h1 className="text-center text-[3rem] font-bold text-[#FF6F38] " >How ChaiCircle Works</h1>
+            <h1 className="text-center text-[3rem] font-bold text-[#FF6F38]  " >How ChaiCircle Works</h1>
             <div className="mt-[3rem] flex flex-wrap gap-[3rem] justify-center   " >
                 {
                     howItWorks.map((i, index) => (
-                        <div key={index} className="bg-gray-900 w-[30%] p-[1rem] rounded-[5px] flex flex-col gap-[1rem] hover:scale-[1.02] tranistion-all cursor-pointer  " >
+                        <div key={index} className="bg-gray-900 w-[30%] p-[1rem] rounded-[5px] flex flex-col gap-[1rem] hover:scale-[1.02] tranistion-all cursor-pointer max-[800px]:w-[80%]  " >
                             <h2 className="text-[2rem]" >{i.title}</h2>
                             <p className="text-[1.3rem] text-justify " >{i.description}</p>
                         </div>
