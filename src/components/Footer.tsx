@@ -7,8 +7,8 @@ import { Link } from 'react-router-dom';
 const Footer = () => {
   return (
    <>
-    <div className="mt-[8rem] bg-gray-900 py-[3rem] flex px-[3rem]  " >
-        <div className='flex gap-[5rem] w-[60%] ' >
+    <div className="mt-[8rem] bg-gray-900 py-[3rem] flex px-[3rem] flex-wrap  max-[600px]:gap-[3rem]  " >
+        <div className='flex gap-[5rem] w-[60%] max-[600px]:w-[100%] max-[600px]:gap-[3rem] ' >
                 <div className='flex flex-col gap-[15px] text-[1.2rem]' >
                     <h3 className='text-[#FF6F38] font-semibold text-[1.35rem]'>Connect With Us Online</h3>
                     <a href="https://www.instagram.com/___arpit_._/"><InstagramIcon/> Instagram</a>
@@ -32,7 +32,7 @@ const Footer = () => {
                     <Link to={"/message"}>Message</Link>
                 </div>
         </div>
-        <div className='w-[40%] items-center justify-center flex flex-col ' >
+        <div className='w-[40%] items-center justify-center flex flex-col max-[600px]:w-[100%]   ' >
             <h1 className="text-[5rem] metal-font text-[#f3771e] " >ChaiCircle</h1>
             <h3 className="text-[1rem] text-gray-200 font-bold ">© 2025 ChaiCircle. All rights reserved.</h3>
         </div>

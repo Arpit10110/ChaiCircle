@@ -41,7 +41,7 @@ const Sec4 = () => {
                 <div className="mt-[5rem] flex flex-wrap gap-[4rem] items-center justify-center " >
                     {
                         faqData.map((faq) => (
-                            <div className="flex flex-col shadow-[0px_0px_48px_-6px_#ffffff40] max-[800px]:w-[80%]   gap-[1rem] w-[40%] p-[2rem] rounded-[5px] bg-gray-800 hover:scale-[1.02] transition-all cursor-pointer  " key={faq.id} >
+                            <div className="flex flex-col shadow-[0px_0px_48px_-6px_#ffffff40] max-[800px]:w-[80%] max-[600px]:w-[95%]     gap-[1rem] w-[40%] p-[2rem] rounded-[5px] bg-gray-800 hover:scale-[1.02] transition-all cursor-pointer  " key={faq.id} >
                                 <h3 className="text-[1.6rem] font-bold " >{faq.question}</h3>
                                 <p className="text-[1.3rem] ">{faq.answer}</p>
                             </div>
