@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 const Signupbox = () => {
     const navigate = useNavigate();
+    const [UserNameIn, SetUserNameIn] = useState<string>('');
     const [NameIn, SetNameIn] = useState<string>('');
     const [EmailIn, SetEmailIn] = useState<string>('');
     const [PasswordIn, SetPasswordIn] = useState<string>('');
@@ -13,6 +14,7 @@ const Signupbox = () => {
         e.preventDefault();
         try {
             const userdata = {
+                username:UserNameIn,
                 name:NameIn,
                 email:EmailIn,
                 password:PasswordIn
@@ -43,7 +45,11 @@ const Signupbox = () => {
   return (
     <>
         <div className='flex justify-center cursor-default  ' >
-            <form onSubmit={submit} className='mt-[8rem] bg-gray-800 w-[40%] p-[1rem] rounded-[5px] flex flex-col gap-[1rem] ' >
+            <form onSubmit={submit} className='mt-[5rem] bg-gray-800 w-[50%] p-[1rem] rounded-[5px] flex flex-col gap-[1rem] ' >
+                <div>
+                    <h3 className='text-[1.5rem] font-semibold ' >UserName</h3>
+                    <input  className='bg-white text-black w-full text-[1.3rem] font-semibold p-[0.3rem] rounded-[5px]  ' type="text" value={UserNameIn} onChange={(e) => SetUserNameIn(e.target.value.toLowerCase())}   required/>
+                </div>
                 <div>
                     <h3 className='text-[1.5rem] font-semibold ' >Name</h3>
                     <input className='bg-white text-black w-full text-[1.3rem] font-semibold p-[0.3rem] rounded-[5px]  ' type="text" value={NameIn} onChange={(e) => SetNameIn(e.target.value)}   required/>
