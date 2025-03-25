@@ -6,9 +6,10 @@ export const isauth = async()=>{
         withCredentials:true
     })
 
-
     if(data.user == false){
         localStorage.removeItem('token')
+    }else{
+        localStorage.setItem('token',data.data.username)
     }
 
     const ans:boolean = data.user;

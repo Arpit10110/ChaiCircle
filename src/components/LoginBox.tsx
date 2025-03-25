@@ -22,7 +22,7 @@ const LoginBox = () => {
             console.log(data)
             if(data.success == true){
                 navigate('/');
-                localStorage.setItem('token',data.token);
+                localStorage.setItem('token',data.username);
             }else{
                 toast.warn(data.message, {
                     position: "top-right",
