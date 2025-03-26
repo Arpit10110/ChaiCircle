@@ -1,13 +1,16 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import Navbar from "../components/Navbar"
 import axios from "axios";
 import { Link } from 'react-router-dom';
 
 const AddFriend = () => {
- 
+  const isuser = localStorage.getItem("token")==null? false:localStorage.getItem("token")
   const [UserName,SetUserName] = useState("");
   const [Searchdata,SetSearchdata] = useState([]);
   const [Message,SetMessage] = useState("")
+  const [showreqbtn,Setshowreqbtn] = useState(false);
+  const [reqdata,Setreqdata] = useState([]);
+
 
   const finduser = async(e:any)=>{
     e.preventDefault();
@@ -22,6 +25,26 @@ const AddFriend = () => {
     }
   }
 
+
+  const findallreq = async()=>{
+    try {
+      const {data} = await axios.get(`${import.meta.env.VITE_HOST}/getrequests`,{withCredentials:true})
+      console.log(data);
+      // Setreqdata(data.requests);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  useEffect(() => {
+   if(isuser==false){
+      Setshowreqbtn(false)
+   }else{
+    Setshowreqbtn(true)
+   }
+  }, [])
+  
+
   
   return (
     <>
@@ -31,6 +54,14 @@ const AddFriend = () => {
                 <input value={UserName} onChange={(e)=>SetUserName(e.target.value.toLowerCase())}  className="w-[90%] max-[600px]:w-[80%]     bg-white text-black text-[1.5rem] p-[0.4rem] rounded-[5px]   " placeholder="Enter a username to find friends...🔍" type="text" required/>
                 <button className="px-[2rem] max-[600px]:px-[1rem]  bg-[#f3771e] font-bold py-[0.6rem] rounded-[5px] cursor-pointer hover:scale-[1.02] transition-all  text-[1.5rem] " >Find</button>
             </form>
+        </div>
+        <div>
+          {
+            showreqbtn?
+            <div className="w-full flex justify-end pr-[3rem] mt-[2rem]" >
+              <button onClick={findallreq} className="text-[1.5rem] px-[1.5rem] cursor-pointer py-[0.3rem] bg-gray-800 rounded-[5px] font-semibold " >Show Request</button>
+            </div>:""
+          }
         </div>
         <div>
            {Searchdata.length>0? Searchdata.map((user:any,index)=>(
