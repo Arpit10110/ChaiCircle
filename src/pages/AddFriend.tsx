@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import Navbar from "../components/Navbar"
 import axios from "axios";
 import { Link } from 'react-router-dom';
+import RequestList from "../components/RequestList";
 
 const AddFriend = () => {
   const isuser = localStorage.getItem("token")==null? false:localStorage.getItem("token")
@@ -10,7 +11,7 @@ const AddFriend = () => {
   const [Message,SetMessage] = useState("")
   const [showreqbtn,Setshowreqbtn] = useState(false);
   const [reqdata,Setreqdata] = useState([]);
-
+  const [open, setOpen] = useState(false);
 
   const finduser = async(e:any)=>{
     e.preventDefault();
@@ -25,12 +26,16 @@ const AddFriend = () => {
     }
   }
 
+  const handleClose = () => {
+    setOpen(false);
+  };
 
   const findallreq = async()=>{
     try {
       const {data} = await axios.get(`${import.meta.env.VITE_HOST}/getrequests`,{withCredentials:true})
       console.log(data);
-      // Setreqdata(data.requests);
+      Setreqdata(data.data);
+      setOpen(true)
     } catch (error) {
       console.log(error);
     }
@@ -78,6 +83,7 @@ const AddFriend = () => {
                   <h1 className="text-center">{Message}</h1>
               </div>}
         </div>
+        <RequestList reqdata={reqdata} openprop={open}  onClose={handleClose}  />
     </>
   )
 }
