@@ -3,7 +3,7 @@ import Navbar from "../components/Navbar"
 import axios from "axios"
 import { useParams, Link } from 'react-router-dom';
 import Loading from "../components/Loading";
-
+import { useNavigate } from "react-router-dom";
 interface userdata{
   username:string,
   dp:string,
@@ -11,6 +11,7 @@ interface userdata{
 };
 
 const Profile = () => {
+  const navigate = useNavigate();
 const param = useParams();
 const [IsLoading,SetIsLoading]  = useState(true);
 const [Isuseradmin,SetIsuseradmin]  = useState(false);
@@ -50,7 +51,17 @@ const [Userdata,SetUserdata]  =useState<userdata>({ username: "", dp: "", name: 
         getprofiledata(String(param.id));
    }, [param.id])
       
-
+   const logout = async()=>{
+    try {
+      const {data} = await axios.get(`${import.meta.env.VITE_HOST}/logout`,{
+        withCredentials:true
+      })
+      console.log(data)
+      navigate("/")
+    } catch (error) {
+      console.log(error)
+    }
+   }
 
   return (
     <>
@@ -83,7 +94,7 @@ const [Userdata,SetUserdata]  =useState<userdata>({ username: "", dp: "", name: 
                 Isuseradmin?
               <div className="flex gap-[3rem]  w-fit  " >
                  <Link className="px-[2.5rem] py-[0.7rem] bg-gray-900 rounded-[5px] text-[1.3rem] font-semibold "  to={"/editprofile/id"} >Edit Profile </Link>
-                 <button className="px-[3rem] cursor-pointer py-[0.7rem] bg-gray-900 rounded-[5px] text-[1.3rem] font-semibold " >LogOut</button>
+                 <button onClick={logout} className="px-[3rem] cursor-pointer py-[0.7rem] bg-gray-900 rounded-[5px] text-[1.3rem] font-semibold " >LogOut</button>
               </div>:
               <div className="flex gap-[3rem]  " >
                   <button onClick={sendfriendreq} className="px-[3rem] py-[0.5rem] bg-blue-500 rounded-[5px] text-[1.5rem] font-semibold" >ADD Friend </button>
