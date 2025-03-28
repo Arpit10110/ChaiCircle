@@ -7,7 +7,8 @@ import { useNavigate } from "react-router-dom";
 interface userdata{
   username:string,
   dp:string,
-  name:string
+  name:string,
+  friends?:[]
 };
 
 const Profile = () => {
@@ -82,10 +83,10 @@ const [Userdata,SetUserdata]  =useState<userdata>({ username: "", dp: "", name: 
                            <h3>0 post</h3>
                        </div>
                        <div>
-                           <h3>0 followers</h3>
+                           <h3>{Userdata.friends?.length} followers</h3>
                        </div>
                        <div>
-                           <h3>0 following</h3>
+                           <h3>{Userdata.friends?.length} following</h3>
                        </div>
                     </div>
                   </div>

@@ -1,4 +1,5 @@
 import Dialog from '@mui/material/Dialog';
+import axios from 'axios';
 const RequestList = ({reqdata,openprop,onClose}:any) => {
 
     interface requsetdatatype{
@@ -10,7 +11,28 @@ const RequestList = ({reqdata,openprop,onClose}:any) => {
    const handleClose = () => {
     onClose();
   };
-  console.log(reqdata);
+
+
+  const acceptreq = async(option:requsetdatatype)=>{
+    try {
+        const {data} = await axios.post(`${import.meta.env.VITE_HOST}/acceptreq`,option,{withCredentials:true});
+        console.log(data);
+    } catch (error) {
+        console.log(error);
+    }
+  }
+
+
+  const rejectreq = async(option:requsetdatatype)=>{
+    try {
+        const {data} = await axios.post(`${import.meta.env.VITE_HOST}/rejectreq`,option,{withCredentials:true});
+        console.log(data);
+    } catch (error) {
+        console.log(error);
+    }
+  }
+
+
   return (
    <>
     <Dialog fullWidth={true} onClose={handleClose} open={open}>
@@ -30,8 +52,8 @@ const RequestList = ({reqdata,openprop,onClose}:any) => {
                                             <h2 className='font-semibold' >{i.from}</h2>
                                         </div>
                                         <div className='flex gap-[1rem] ' >
-                                            <button className='px-[1rem] py-[0.2rem] rounded-[5px] bg-green-500 cursor-pointer ' >Accept</button>
-                                            <button className='px-[1rem] py-[0.2rem] rounded-[5px] bg-red-500 cursor-pointer ' >Reject</button>
+                                            <button onClick={()=>acceptreq(i)} className='px-[1rem] py-[0.2rem] rounded-[5px] bg-green-500 cursor-pointer ' >Accept</button>
+                                            <button onClick={()=>rejectreq(i)} className='px-[1rem] py-[0.2rem] rounded-[5px] bg-red-500 cursor-pointer ' >Reject</button>
                                         </div>
                                     </div>
                                 )
