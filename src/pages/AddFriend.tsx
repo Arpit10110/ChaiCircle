@@ -3,6 +3,7 @@ import Navbar from "../components/Navbar"
 import axios from "axios";
 import { Link } from 'react-router-dom';
 import RequestList from "../components/RequestList";
+import Loading from "../components/Loading";
 
 const AddFriend = () => {
   const isuser = localStorage.getItem("token")==null? false:localStorage.getItem("token")
@@ -12,8 +13,11 @@ const AddFriend = () => {
   const [showreqbtn,Setshowreqbtn] = useState(false);
   const [reqdata,Setreqdata] = useState([]);
   const [open, setOpen] = useState(false);
+  const [Isloading,SetIsloading] = useState(false);
+  const [RequestLoading,SetRequestLoading] = useState(true);
 
   const finduser = async(e:any)=>{
+    SetIsloading(true);
     e.preventDefault();
     try {
       const {data} = await axios.post(`${import.meta.env.VITE_HOST}/finduser`,{username:UserName})
@@ -21,6 +25,7 @@ const AddFriend = () => {
       if(data.users.length==0){
         SetMessage("No users found...");
       }
+      SetIsloading(false);
     } catch (error) {
       console.log(error);
     }
@@ -33,8 +38,8 @@ const AddFriend = () => {
   const findallreq = async()=>{
     try {
       const {data} = await axios.get(`${import.meta.env.VITE_HOST}/getrequests`,{withCredentials:true})
-      console.log(data);
       Setreqdata(data.data);
+      SetRequestLoading(false);
       setOpen(true)
     } catch (error) {
       console.log(error);
@@ -69,6 +74,11 @@ const AddFriend = () => {
           }
         </div>
         <div>
+          {
+            Isloading?
+           <Loading/>
+            :
+            <>
            {Searchdata.length>0? Searchdata.map((user:any,index)=>(
                 <div className="flex bg-gray-900 w-[70%] m-auto mt-[3rem] justify-between p-[1.5rem] rounded-[10px] items-center max-[600px]:w-[90%]  " key={index}>
                     <div className="flex items-center gap-[2rem] ">
@@ -82,8 +92,10 @@ const AddFriend = () => {
             )):<div className="text-[2rem] mt-[5rem] " >
                   <h1 className="text-center">{Message}</h1>
               </div>}
+            </>
+          }
         </div>
-        <RequestList reqdata={reqdata} openprop={open}  onClose={handleClose}  />
+        <RequestList RequestLoading={RequestLoading} reqdata={reqdata} openprop={open}  onClose={handleClose}  />
     </>
   )
 }

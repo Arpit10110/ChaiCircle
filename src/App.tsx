@@ -5,6 +5,8 @@ import Login from "./pages/Login.tsx"
 import Signup from "./pages/Signup.tsx"
 import AddFriend from './pages/AddFriend.tsx';
 import Profile from './pages/Profile.tsx';
+import CreatePost from './pages/CreatePost.tsx';
+
 const App = () => {
   return (
     <Router>
@@ -14,6 +16,7 @@ const App = () => {
         <Route path="/login" element={<Login/>} />
         <Route path="/addfriends" element={<AddFriend/>} />
         <Route path="/:id" element={<Profile/>} />
+        <Route path='/createpost/:id' element={<CreatePost/>}  />
       </Routes>
     </Router>
   )

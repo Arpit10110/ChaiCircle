@@ -3,13 +3,17 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
+import Backdrop from '@mui/material/Backdrop';
+import CircularProgress from '@mui/material/CircularProgress';
 const LoginBox = () => {
     const navigate = useNavigate();
     const [EmailIn, SetEmailIn] = useState<string>('');
     const [PasswordIn, SetPasswordIn] = useState<string>('');
+    const [open, setOpen] = useState(false);
 
 
     const submit = async(e:any)=>{
+        setOpen(true);
         e.preventDefault();
         try {
             const userdata = {
@@ -23,6 +27,7 @@ const LoginBox = () => {
             if(data.success == true){
                 navigate('/');
                 localStorage.setItem('token',data.username);
+                setOpen(false);
             }else{
                 toast.warn(data.message, {
                     position: "top-right",
@@ -43,6 +48,13 @@ const LoginBox = () => {
 
   return (
     <>
+     <Backdrop
+            sx={(theme) => ({ color: '#fff', zIndex: theme.zIndex.drawer + 1 })}
+            open={open}
+          >
+            <CircularProgress color="inherit" />
+          </Backdrop>
+    
         <div className='flex justify-center cursor-default  ' >
             <form onSubmit={submit} className='mt-[8rem]  bg-gray-800 w-[40%]  p-[1rem] rounded-[5px] flex flex-col gap-[1rem] ' >
                 <div>

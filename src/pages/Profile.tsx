@@ -8,7 +8,8 @@ interface userdata{
   username:string,
   dp:string,
   name:string,
-  friends?:[]
+  friends?:[],
+  _id?:string
 };
 
 const Profile = () => {
@@ -105,7 +106,7 @@ const [Userdata,SetUserdata]  =useState<userdata>({ username: "", dp: "", name: 
             {
               Isuseradmin?
               <div className="w-[60%]  m-auto flex items-end justify-end mt-[1rem] " >
-                <Link to={"/createpost"} className="px-[2rem] py-[0.5rem] bg-gray-900 rounded-[5px] text-[1.5rem]" >Create New Post</Link>
+                <Link to={`/createpost/${Userdata._id}`} className="px-[2rem] py-[0.5rem] bg-gray-900 rounded-[5px] text-[1.5rem]" >Create New Post</Link>
               </div>:""
             }
         </div>
