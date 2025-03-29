@@ -64,7 +64,6 @@ const CreatePost = () => {
                             onChange={(e)=>SetCaption(e.target.value)}
                             className="bg-white w-full min-h-[15vh] rounded-[5px] text-black font-bold p-[0.4rem] text-[1.5rem]"
                             required
-                            defaultValue=""
                         ></textarea>
                     </div>
                     <div className="flex font-semibold items-center bg-gray-800 w-full p-[0.4rem] rounded-[5px]  gap-[1rem]  ">
