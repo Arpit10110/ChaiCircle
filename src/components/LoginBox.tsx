@@ -39,9 +39,11 @@ const LoginBox = () => {
                     progress: undefined,
                     theme: "dark",
                     });
-            }
+                }
+                setOpen(false);
         } catch (error) {
             console.error(error);
+        setOpen(false);
         }
     }
 
