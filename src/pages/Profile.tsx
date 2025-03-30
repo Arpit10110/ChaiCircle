@@ -308,5 +308,3 @@ const [Adminusername,SetAdminusername]  = useState("")
 }
 
 export default Profile
-
-// Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas debitis obcaecati corporis atque repellat? Qui amet assumenda tenetur quibusdam voluptatem! Officiis beatae nihil, eum enim error dignissimos odio harum. Ratione.
