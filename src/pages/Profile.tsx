@@ -12,7 +12,8 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import Backdrop from '@mui/material/Backdrop';
 import CircularProgress from '@mui/material/CircularProgress';
 import { ToastContainer, toast } from 'react-toastify';
-
+import Dialog from '@mui/material/Dialog';
+import "../index.css"
 interface userdata{
   username:string,
   dp:string,
@@ -31,9 +32,9 @@ interface postdatatye{
 }
 
 const Profile = () => {
+
 const navigate = useNavigate();
 const param = useParams();
-const paramID:string = String(param.id);
 const [IsLoading,SetIsLoading]  = useState(true);
 const [Isuseradmin,SetIsuseradmin]  = useState(false);
 const [Userdata,SetUserdata]  =useState<userdata>({ username: "", dp: "", name: "" });
@@ -41,6 +42,12 @@ const [Post,SetPost] = useState([]);
 const [refresh, setRefresh] = useState(false);
 const [open, setOpen] = useState(false);
 const [Adminusername,SetAdminusername]  = useState("")
+const [Comentopen,SetComentopen] = useState(false);
+const [Allcoments,SetAllcoments] = useState([]);
+const [Addnewcomment,SetAddnewcomment] = useState("")
+const [Selectedpost,SetSelectedpost] = useState("")
+
+
 
   const getprofiledata = async(username:string)=>{
     try {
@@ -164,6 +171,41 @@ const [Adminusername,SetAdminusername]  = useState("")
     }
    }
 
+   const opencommentbox = (comment:[],id:string)=>{
+    SetAllcoments(comment)
+    SetComentopen(true)
+    SetSelectedpost(id)
+   }
+
+   const addnewcomment = async(e:any)=>{
+    e.preventDefault();
+    try {
+      const {data} = await axios.post(`${import.meta.env.VITE_HOST}/addcomment`,{
+        postid: Selectedpost,
+        userid:Adminusername,
+        addcomment:Addnewcomment
+      },{
+        withCredentials:true
+      })
+      console.log(data)
+       toast.success(data.message, {
+                          position: "top-right",
+                          autoClose: 5000,
+                          hideProgressBar: false,
+                          closeOnClick: false,
+                          pauseOnHover: true,
+                          draggable: true,
+                          progress: undefined,
+                          theme: "dark",
+                          });
+      setRefresh(!refresh);
+      SetAddnewcomment("")
+      SetComentopen(false)
+    } catch (error) {
+      console.log(error)
+    }
+   }
+
   return (
     <>
          <Backdrop
@@ -172,6 +214,39 @@ const [Adminusername,SetAdminusername]  = useState("")
           >
             <CircularProgress color="inherit" />
           </Backdrop>
+
+
+            <Dialog fullWidth={true} onClose={()=>SetComentopen(false)} open={Comentopen}>
+                  <div  className=' bg-gray-800  text-white flex flex-col' >
+                    {
+                      Allcoments.length>0?
+                      <div  className="scroll h-[60vh] overflow-y-scroll bg-gray-700 flex flex-col gap-[1rem] px-[0.5rem] py-[2rem] " >
+                          {
+                            Allcoments.map((i:any,index:number)=>{
+                              return(
+                                <div className="bg-gray-800 p-[0.5rem] text-[1.5rem] rounded-[5px] flex flex-col gap-[0.3rem] cursor-default " key={index}>
+                                    <h2>👤{i.username}</h2>
+                                    <p className="pl-[1rem]" >{i.comments}</p>
+                                </div>
+                              )
+                            })
+                          }
+                      </div>:
+                       <div className="h-[60vh] bg-gray-800 flex justify-center items-center " >
+                         <h2 className="text-[2rem] font-semibold" >0 Comments</h2>
+                       </div>
+                    }
+                     
+                      <form className="w-full " onSubmit={addnewcomment} >
+                        <input type="text" value={Addnewcomment} onChange={(e)=>SetAddnewcomment(e.target.value)} className="w-[80%] bg-white text-black text-[1.5rem] font-semibold p-[0.3rem] " required/>
+                        <button className="w-[20%] cursor-pointer bg-gray-900 text-[1.5rem] p-[0.3rem] " >Submit</button>
+                      </form>
+                  </div>
+              </Dialog>
+
+
+
+
       <Navbar/>
       {
         IsLoading?
@@ -268,7 +343,12 @@ const [Adminusername,SetAdminusername]  = useState("")
                                         </button>
                                         }
                                       </div>
-                                      <ChatBubbleOutlineSharpIcon className="!text-[2rem] !cursor-pointer hover:scale-[1.05] transition-all " />
+                                      <div className="flex gap-[0.5rem] items-center  " >
+                                        <h4 className="text-[1.7rem] font-semibold " >{Number(i.comments.length) }</h4>
+                                        <button onClick={()=>opencommentbox(i.comments,i._id)} >
+                                         <ChatBubbleOutlineSharpIcon className="!text-[2rem] !cursor-pointer hover:scale-[1.05] transition-all " />
+                                        </button>
+                                      </div>
                                       <button
                                         onClick={() => {
                                           const message = `Check out this post by ${i.username}: ${i.caption} - https://chaicircle.vercel.app/#/${i.username}`;

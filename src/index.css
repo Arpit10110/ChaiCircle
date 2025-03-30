@@ -9,6 +9,9 @@
     --breakpoint-3xl: 120rem;
 }
 
+
+
+
 html{
     font-size: 75%;
 }
@@ -45,3 +48,25 @@ body{
         font-size: 60%;
     }
 }
+
+
+.scroll::-webkit-scrollbar {
+    width: 8px; /* Adjust the width of the scrollbar */
+  }
+  
+  /* Scrollbar track */
+  .scroll::-webkit-scrollbar-track {
+    background: #1a1a1a; /* Background color of the scrollbar track */
+    border-radius: 1px; /* Optional: Rounded corners */
+  }
+  
+  /* Scrollbar thumb */
+  .scroll::-webkit-scrollbar-thumb {
+    background: #c2c2c2; /* Color of the scrollbar thumb */
+    border-radius: 1px; /* Optional: Rounded corners */
+  }
+  
+  /* Scrollbar thumb hover effect */
+  .scroll::-webkit-scrollbar-thumb:hover {
+    background: #888; /* Color when hovering over the scrollbar */
+  }
