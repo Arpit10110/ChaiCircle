@@ -58,7 +58,7 @@ const Signupbox = () => {
       </Backdrop>
 
         <div className='flex justify-center cursor-default  ' >
-            <form onSubmit={submit} className='mt-[5rem] bg-gray-800 w-[50%] p-[1rem] rounded-[5px] flex flex-col gap-[1rem] ' >
+            <form onSubmit={submit} className='mt-[5rem] bg-gray-800 w-[50%] max-[800px]:w-[95%]  p-[1rem] rounded-[5px] flex flex-col gap-[1rem] ' >
                 <div>
                     <h3 className='text-[1.5rem] font-semibold ' >UserName</h3>
                     <input  className='bg-white text-black w-full text-[1.3rem] font-semibold p-[0.3rem] rounded-[5px]  ' type="text" value={UserNameIn} onChange={(e) => SetUserNameIn(e.target.value.toLowerCase())}   required/>

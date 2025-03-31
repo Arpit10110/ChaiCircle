@@ -251,15 +251,15 @@ const [Selectedpost,SetSelectedpost] = useState("")
       {
         IsLoading?
         <Loading/>:
-        <div className="mb-[15rem] h-[500vh]" >
-            <div className=" border-b-[1px] flex flex-col gap-[2rem] justify-center w-[60%] m-auto border-gray-500 pb-[2rem] " >
-              <div className="flex gap-[5rem] w-full justify-center " >
-                <div className="w-[15%] flex items-center " >
+        <div className="mb-[10rem] " >
+            <div className=" border-b-[1px] flex flex-col gap-[2rem] justify-center w-[60%] max-[1000px]:w-[90%] max-[800px]:w-[95%]  m-auto border-gray-500 pb-[2rem] " >
+              <div className="flex gap-[5rem] max-[500px]:gap-[1rem]  w-full justify-center " >
+                <div className="w-[15%] max-[500px]:w-[20%]  flex items-center " >
                   <img loading="lazy" className="rounded-[50%] w-[100%] object-cover " src={Userdata.dp} alt="UserProfile" />
                 </div>
-                  <div className="w-[60%] flex flex-col gap-[1rem]  justify-center text-[2rem] " >
+                  <div className="w-[60%] max-[1000px]:w-[90%] max-[800px]:w-[95%]  flex flex-col gap-[1rem]  justify-center text-[2rem] " >
                     <h2>{Userdata.username}</h2>
-                    <div className="flex gap-[4rem] " >
+                    <div className="flex gap-[4rem] max-[400px]:gap-[2rem]  " >
                        <div>
                            <h3>{Post.length} post</h3>
                        </div>
@@ -299,23 +299,23 @@ const [Selectedpost,SetSelectedpost] = useState("")
             </div>
             {
               Isuseradmin?
-              <div className="w-[60%]  m-auto flex items-end justify-end mt-[1rem] " >
+              <div className="w-[60%] max-[1000px]:w-[90%] max-[800px]:w-[95%]    m-auto flex items-end justify-end mt-[1rem] " >
                 <Link to={`/createpost/${Userdata._id}`} className="px-[2rem] py-[0.5rem] bg-gray-900 rounded-[5px] text-[1.5rem]" >Create New Post</Link>
               </div>:""
             }
             {
               Adminusername=="N/A"?
-              <div className="w-[60%] m-auto mt-[2rem] flex flex-wrap justify-between gap-y-[3rem] px-[2rem] " >
+              <div className="w-[60%] max-[1000px]:w-[90%]  m-auto mt-[2rem] flex flex-wrap justify-between gap-y-[3rem] px-[2rem] " >
                 <Link className="text-[1.5rem] bg-blue-500 px-[1rem] py-[0.5rem] rounded-[0.5rem] m-auto  "  to={"/login"} >Login please to see the post</Link>
               </div>:
-            <div className="w-[60%] m-auto mt-[2rem] items-center flex flex-wrap justify-between gap-y-[3rem] px-[2rem] " >
+            <div className="w-[60%] max-[1000px]:w-[90%] max-[800px]:w-[95%]   m-auto mt-[2rem] items-center flex flex-wrap justify-between gap-y-[3rem] px-[2rem] max-[800px]:justify-center " >
                  {
                   Post.length>0?
                   <>
                     {
                       Post.map((i:postdatatye,index:number)=>{
                         return(
-                            <div key={index} className="bg-gray-900 flex flex-col gap-[0.5rem] p-[0.5rem]  w-[45%]   rounded-[5px] " >
+                            <div key={index} className="bg-gray-900 flex flex-col gap-[0.5rem] p-[0.5rem]  w-[45%] max-[800px]:w-[70%] max-[800px]:gap-[2rem] max-[600px]:w-[85%] max-[450px]:w-[95%]    rounded-[5px] " >
                                 <div className="border-b-[1px] pb-[5px] border-gray-500 flex justify-between items-center " >
                                   <h2 className="text-[1.5rem] font-semibold " > 👤 {i.username}</h2>
                                   {

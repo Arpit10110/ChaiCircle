@@ -56,7 +56,7 @@ const CreatePost = () => {
               </Backdrop>
             <Navbar />
             <div className="flex justify-center" >
-                <form onSubmit={submitpost} className="bg-gray-700 w-[50%] p-[1rem] rounded-[10px] mt-[5rem] flex flex-col gap-[1rem]" action="">
+                <form onSubmit={submitpost} className="bg-gray-700 w-[50%] max-[800px]:w-[95%]  p-[1rem] rounded-[10px] mt-[5rem] flex flex-col gap-[1rem]" action="">
                     <div className="flex flex-col gap-[0.5rem]" >
                         <h2 className="text-[1.5rem] font-semibold " >Caption</h2>
                         <textarea
