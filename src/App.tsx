@@ -8,7 +8,6 @@ import Profile from './pages/Profile.tsx';
 import CreatePost from './pages/CreatePost.tsx';
 import Explore from './pages/Explore.tsx';
 import Message from './pages/Message.tsx';
-
 const App = () => {
   return (
     <Router>
