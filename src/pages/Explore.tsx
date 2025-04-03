@@ -59,7 +59,7 @@ const Explore = () => {
       const addlike = async(postid:string)=>{
         try {
           setOpen(true)
-          const {data} = await axios.post(`${import.meta.env.VITE_HOST}/addlike`,{
+           await axios.post(`${import.meta.env.VITE_HOST}/addlike`,{
             postid: postid,
             userid:Adminusername
           },{

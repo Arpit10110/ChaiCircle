@@ -60,7 +60,7 @@ const Message = () => {
     const addmessage = async (sendmessage:string) => {
         SetSendMessage("")
         try {
-            const { data } = await axios.post(`${import.meta.env.VITE_HOST}/addmessage`, { content: sendmessage, receiver: SelectedFriend }, { withCredentials: true })
+            await axios.post(`${import.meta.env.VITE_HOST}/addmessage`, { content: sendmessage, receiver: SelectedFriend }, { withCredentials: true })
             SetSendMessage("");
         } catch (e) {
             console.error(e)
