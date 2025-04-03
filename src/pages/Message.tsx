@@ -196,7 +196,7 @@ const Message = () => {
                                             })
                                         }
                                     </div>
-                                    <div>
+                                    <div className='hidden max-[950px]:flex ' >
                                         <button onClick={()=>setDOpen(true)} className='px-[1.8rem] py-[0.3rem] bg-[#f3771e] text-[1.5rem] ml-[1rem] rounded-[5px] font-semibold ' >All Firends</button>
                                     </div>
                                     <div className='w-[70%] max-[950px]:w-[99%] max-[950px]:mt-[2rem] max-[950px]:m-auto ' >
