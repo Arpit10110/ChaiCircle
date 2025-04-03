@@ -92,7 +92,7 @@ const Message = () => {
     //socket
     useEffect(() => {
         // Initialize socket connection once
-        socketRef.current = io("http://localhost:5000");
+        socketRef.current = io("https://chai-circle-backend.vercel.app");
 
         return () => {
             // Cleanup socket connection on component unmount

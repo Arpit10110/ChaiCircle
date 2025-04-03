@@ -46,7 +46,7 @@ const [Comentopen,SetComentopen] = useState(false);
 const [Allcoments,SetAllcoments] = useState([]);
 const [Addnewcomment,SetAddnewcomment] = useState("")
 const [Selectedpost,SetSelectedpost] = useState("")
-
+const [ShareLink,SetShareLink] = useState("")
 
 
   const getprofiledata = async(username:string)=>{
@@ -61,6 +61,9 @@ const [Selectedpost,SetSelectedpost] = useState("")
       SetIsuseradmin(data.isuseradmin)
       SetUserdata(data.userdata)
       SetPost(data.post)
+      const ll=`https://chaicircle.vercel.app/#/${data.adminusername}`
+      console.log(ll)
+      SetShareLink(ll)
       SetIsLoading(false);
     } catch (error) {
       console.log(error)
@@ -352,7 +355,7 @@ const [Selectedpost,SetSelectedpost] = useState("")
                                       </div>
                                       <button
                                         onClick={() => {
-                                          const message = `Check out this post by ${i.username}: ${i.caption} - https://chaicircle.vercel.app/#/${i.username}`;
+                                          const message = `Check out this post by ${i.username}: ${i.caption} - ${ShareLink}`;
                                           const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(message)}`;
                                           window.open(whatsappUrl, "_blank");
                                         }}
