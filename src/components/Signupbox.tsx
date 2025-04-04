@@ -19,10 +19,10 @@ const Signupbox = () => {
         e.preventDefault();
         try {
             const userdata = {
-                username:UserNameIn,
-                name:NameIn,
-                email:EmailIn,
-                password:PasswordIn
+                username:UserNameIn.trim(),
+                name:NameIn.trim(),
+                email:EmailIn.trim(),
+                password:PasswordIn.trim()
             }
             const {data} = await axios.post(`${import.meta.env.VITE_HOST}/signup`,userdata,{
                 withCredentials: true
@@ -61,7 +61,7 @@ const Signupbox = () => {
             <form onSubmit={submit} className='mt-[5rem] bg-gray-800 w-[50%] max-[800px]:w-[95%]  p-[1rem] rounded-[5px] flex flex-col gap-[1rem] ' >
                 <div>
                     <h3 className='text-[1.5rem] font-semibold ' >UserName</h3>
-                    <input  className='bg-white text-black w-full text-[1.3rem] font-semibold p-[0.3rem] rounded-[5px]  ' type="text" value={UserNameIn} onChange={(e) => SetUserNameIn(e.target.value.toLowerCase())}   required/>
+                    <input  className='bg-white text-black w-full text-[1.3rem] font-semibold p-[0.3rem] rounded-[5px]  ' type="text" value={UserNameIn} onChange={(e) => SetUserNameIn(e.target.value.trimStart())}   required/>
                 </div>
                 <div>
                     <h3 className='text-[1.5rem] font-semibold ' >Name</h3>
@@ -69,11 +69,11 @@ const Signupbox = () => {
                 </div>
                 <div>
                     <h3 className='text-[1.5rem] font-semibold ' >Email</h3>
-                    <input className='bg-white text-black w-full text-[1.3rem] font-semibold p-[0.3rem] rounded-[5px]  ' type="text" value={EmailIn} onChange={(e) => SetEmailIn(e.target.value)}   required/>
+                    <input className='bg-white text-black w-full text-[1.3rem] font-semibold p-[0.3rem] rounded-[5px]  ' type="text" value={EmailIn} onChange={(e) => SetEmailIn(e.target.value.trimStart())}   required/>
                 </div>
                 <div>
                     <h3 className='text-[1.5rem] font-semibold ' >Password</h3>
-                    <input type='password' className='bg-white text-black w-full text-[1.3rem] font-semibold p-[0.3rem] rounded-[5px]  ' value={PasswordIn} onChange={(e) => SetPasswordIn(e.target.value)} required />
+                    <input type='password' className='bg-white text-black w-full text-[1.3rem] font-semibold p-[0.3rem] rounded-[5px]  ' value={PasswordIn} onChange={(e) => SetPasswordIn(e.target.value.trimStart())} required />
                 </div>
                 <div className='flex justify-center items-center flex-col gap-[5px]' >
                     <button className='text-[1.5rem] bg-blue-600 font-semibold px-[1rem] py-[0.3rem] rounded-[5px] hover:scale-[1.02] transition-all cursor-pointer  ' >SignUP</button>
