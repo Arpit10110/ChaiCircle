@@ -259,7 +259,7 @@ const [ShareLink,SetShareLink] = useState("")
             <div className=" border-b-[1px] flex flex-col gap-[2rem] justify-center w-[60%] max-[1000px]:w-[90%] max-[800px]:w-[95%]  m-auto border-gray-500 pb-[2rem] " >
               <div className="flex gap-[5rem] max-[500px]:gap-[1rem]  w-full justify-center " >
                 <div className="w-[15%] max-[500px]:w-[20%]  flex items-center " >
-                  <img loading="lazy" className="rounded-[50%] w-[100%] object-cover " src={Userdata.dp} alt="UserProfile" />
+                  <img loading="lazy" className="rounded-[50%] w-[100%] object-cover " src={"https://res.cloudinary.com/dblybkghe/image/upload/v1742805997/defaultprofile_c9wwd3.png"} alt="UserProfile" />
                 </div>
                   <div className="w-[60%] max-[1000px]:w-[90%] max-[800px]:w-[95%]  flex flex-col gap-[1rem]  justify-center text-[2rem] " >
                     <h2>{Userdata.username}</h2>
