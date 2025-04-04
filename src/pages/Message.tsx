@@ -92,7 +92,7 @@ const Message = () => {
     //socket
     useEffect(() => {
         // Initialize socket connection once
-        socketRef.current = io("https://chai-circle-backend.vercel.app");
+        socketRef.current = io(import.meta.env.VITE_HOST);
 
         return () => {
             // Cleanup socket connection on component unmount
@@ -199,7 +199,7 @@ const Message = () => {
                                     <div className='hidden max-[950px]:flex ' >
                                         <button onClick={()=>setDOpen(true)} className='px-[1.8rem] py-[0.3rem] bg-[#f3771e] text-[1.5rem] ml-[1rem] rounded-[5px] font-semibold ' >All Firends</button>
                                     </div>
-                                    <div className='w-[70%] max-[950px]:w-[99%] max-[950px]:mt-[2rem] max-[950px]:m-auto ' >
+                                    <div className='w-[70%] h-full max-[950px]:w-[99%] max-[950px]:mt-[2rem] max-[950px]:m-auto ' >
                                         {
                                             SelectedFriend == "" ?
                                                 <div className='w-full h-full justify-center items-center flex max-[950px]:h-[50vh] ' >
@@ -207,7 +207,7 @@ const Message = () => {
                                                 </div> :
                                                 <div className='flex flex-col h-full ' >
                                                     <h1 className='bg-gray-800 w-full text-[1.5rem] pl-[1rem] py-[0.3rem] ' >👤{SelectedFriend}</h1>
-                                                    <div id='messagebox' ref={messageBoxRef} className=' scroll w-full overflow-y-scroll  flex flex-col gap-[2rem]  h-[100%] py-[1rem] px-[0.5rem] max-[950px]:h-[90vh]   ' >
+                                                    <div id='messagebox' ref={messageBoxRef} className=' scroll w-full overflow-y-scroll  flex flex-col gap-[2rem]  h-[90%] py-[1rem] px-[0.5rem] max-[950px]:h-[90vh]   ' >
                                                         {
                                                             ALlChat.map((i: AllChatdata, index: any) => {
                                                                 return (
