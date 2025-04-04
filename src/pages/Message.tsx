@@ -207,7 +207,7 @@ const Message = () => {
                                                 </div> :
                                                 <div className='flex flex-col h-full ' >
                                                     <h1 className='bg-gray-800 w-full text-[1.5rem] pl-[1rem] py-[0.3rem] ' >👤{SelectedFriend}</h1>
-                                                    <div id='messagebox' ref={messageBoxRef} className=' scroll w-full overflow-y-scroll  flex flex-col gap-[2rem]  h-[90%] py-[1rem] px-[0.5rem] max-[950px]:h-[90vh]   ' >
+                                                    <div id='messagebox' ref={messageBoxRef} className=' scroll w-full overflow-y-scroll  flex flex-col gap-[2rem]  h-[90%] py-[1rem] px-[0.5rem] max-[950px]:h-[85vh]   ' >
                                                         {
                                                             ALlChat.map((i: AllChatdata, index: any) => {
                                                                 return (
