@@ -283,7 +283,7 @@ const [ShareLink,SetShareLink] = useState("")
                    {
                 Isuseradmin?
               <div className="flex gap-[3rem]  w-fit  " >
-                 <Link className="px-[2.5rem] py-[0.7rem] bg-gray-900 rounded-[5px] text-[1.3rem] font-semibold "  to={"/editprofile/id"} >Edit Profile </Link>
+                 <a className="px-[2.5rem] py-[0.7rem] bg-gray-900 rounded-[5px] text-[1.3rem] font-semibold "  href="https://i.pinimg.com/originals/13/75/7f/13757ff4b62025394ea27aaf46fe12ae.jpg" target="_blank" >Edit Profile </a>
                  <button onClick={logout} className="px-[3rem] cursor-pointer py-[0.7rem] bg-gray-900 rounded-[5px] text-[1.3rem] font-semibold " >LogOut</button>
               </div>:
               <>
