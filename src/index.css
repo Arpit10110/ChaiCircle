@@ -1,72 +1,200 @@
-@import url('https://fonts.googleapis.com/css2?family=Metal+Mania&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800&family=Metal+Mania&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
 
 @import "tailwindcss";
 
 @theme {
-    --breakpoint-belowtab: 650px ;
-    --breakpoint-2xl: 100rem;
-    --breakpoint-3xl: 120rem;
+  --breakpoint-belowtab: 650px;
+  --breakpoint-2xl: 100rem;
+  --breakpoint-3xl: 120rem;
+
+  /* Stitch Theme Colors */
+  --color-surface-deep: #08090B;
+  --color-surface-canvas: #0D0F12;
+  --color-surface-dim: #121315;
+  --color-surface: #121315;
+  --color-surface-elevated: #111318;
+  --color-surface-overlay: #181B21;
+  --color-surface-bright: #38393b;
+  --color-surface-container-lowest: #0d0e10;
+  --color-surface-container-low: #1b1c1e;
+  --color-surface-container: #1f2022;
+  --color-surface-container-high: #292a2c;
+  --color-surface-container-highest: #343537;
+
+  --color-primary: #ffc174;
+  --color-primary-container: #f59e0b;
+  --color-primary-fixed: #ffddb8;
+  --color-primary-fixed-dim: #ffb95f;
+  --color-on-primary: #472a00;
+  --color-on-primary-container: #613b00;
+
+  --color-secondary: #ffb951;
+  --color-secondary-container: #c2841a;
+  --color-secondary-fixed: #ffddb3;
+  --color-secondary-fixed-dim: #ffb951;
+  --color-on-secondary: #452b00;
+
+  --color-tertiary: #ffc08e;
+  --color-tertiary-container: #ff9837;
+  --color-tertiary-fixed: #ffdcc3;
+  --color-tertiary-fixed-dim: #ffb77d;
+  --color-on-tertiary: #4d2600;
+
+  --color-text-primary: #F8F9FA;
+  --color-text-secondary: #EDEDED;
+  --color-text-muted: #94A3B8;
+  --color-text-dim: #64748B;
+
+  --color-on-surface: #e3e2e5;
+  --color-on-surface-variant: #d8c3ad;
+
+  --color-border-subtle: rgba(255, 255, 255, 0.08);
+  --color-border-prominent: rgba(255, 255, 255, 0.14);
+  --color-chai-glow: rgba(245, 158, 11, 0.12);
+
+  /* Spacing Tokens */
+  --spacing-space-xs: 0.25rem;
+  --spacing-space-sm: 0.5rem;
+  --spacing-space-md: 1rem;
+  --spacing-space-lg: 1.5rem;
+  --spacing-space-xl: 2.5rem;
+  --spacing-margin: 2rem;
+  --spacing-margin-mobile: 1rem;
+  --spacing-gutter: 1.5rem;
+
+  /* Font Families */
+  --font-geist: "Geist", system-ui, sans-serif;
+  --font-poppins: "Poppins", sans-serif;
+  --font-roboto: "Roboto Condensed", sans-serif;
+  --font-metal: "Metal Mania", system-ui;
 }
 
-
-
-
-html{
-    font-size: 75%;
+html {
+  font-size: 80%;
+  scroll-behavior: smooth;
 }
 
-body{
-    background-color: black;
-    color: white;
+body {
+  background-color: #08090B;
+  color: #e3e2e5;
+  font-family: "Geist", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
-.poppins-font{
-    font-family: "Poppins", sans-serif;
+.poppins-font {
+  font-family: "Poppins", sans-serif;
 }
-.roboto-font{
-    font-family: "Roboto Condensed", sans-serif;
+.roboto-font {
+  font-family: "Roboto Condensed", sans-serif;
 }
-.metal-font{
-    font-family: "Metal Mania", system-ui;
+.metal-font {
+  font-family: "Metal Mania", system-ui;
 }
-
-@media (width<=800px){
-    html{
-        font-size: 70%;
-    }
+.geist-font {
+  font-family: "Geist", sans-serif;
 }
 
-@media (width<=600px){
-    html{
-        font-size: 65%;
-    }
+/* Material Symbols Outlined font styling helper */
+.material-symbols-outlined {
+  font-family: 'Material Symbols Outlined';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
 }
 
-@media (width<=450px){
-    html{
-        font-size: 60%;
-    }
+@media (width <= 800px) {
+  html {
+    font-size: 72%;
+  }
 }
 
+@media (width <= 600px) {
+  html {
+    font-size: 68%;
+  }
+}
 
+@media (width <= 450px) {
+  html {
+    font-size: 64%;
+  }
+}
+
+/* Scrollbar customization */
 .scroll::-webkit-scrollbar {
-    width: 8px; /* Adjust the width of the scrollbar */
+  width: 8px;
+}
+
+.scroll::-webkit-scrollbar-track {
+  background: #1a1a1a;
+  border-radius: 1px;
+}
+
+.scroll::-webkit-scrollbar-thumb {
+  background: #c2c2c2;
+  border-radius: 1px;
+}
+
+.scroll::-webkit-scrollbar-thumb:hover {
+  background: #888;
+}
+
+/* Ambient glow & glass utilities */
+.glass-panel {
+  background: rgba(17, 19, 24, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-pill {
+  background: rgba(24, 27, 33, 0.8);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.amber-glow {
+  box-shadow: 0 0 25px rgba(245, 158, 11, 0.25);
+}
+
+.amber-glow-lg {
+  box-shadow: 0 0 50px rgba(245, 158, 11, 0.35);
+}
+
+/* Infinite Marquee Animation */
+@keyframes marquee-scroll {
+  from {
+    transform: translateX(0%);
   }
-  
-  /* Scrollbar track */
-  .scroll::-webkit-scrollbar-track {
-    background: #1a1a1a; /* Background color of the scrollbar track */
-    border-radius: 1px; /* Optional: Rounded corners */
+  to {
+    transform: translateX(-50%);
   }
-  
-  /* Scrollbar thumb */
-  .scroll::-webkit-scrollbar-thumb {
-    background: #c2c2c2; /* Color of the scrollbar thumb */
-    border-radius: 1px; /* Optional: Rounded corners */
-  }
-  
-  /* Scrollbar thumb hover effect */
-  .scroll::-webkit-scrollbar-thumb:hover {
-    background: #888; /* Color when hovering over the scrollbar */
-  }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll 28s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Hide scrollbars cross-browser */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

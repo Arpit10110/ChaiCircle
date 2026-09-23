@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base { html, body { margin: 0; padding: 0; } body { overscroll-behavior: none; } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: 'class', theme: { extend: { 'colors': { 'surface-container-highest': '#343537', 'tertiary-container': '#ff9837', 'inverse-surface': '#e3e2e5', 'chai-glow': 'rgba(245, 158, 11, 0.12)', 'primary-fixed-dim': '#ffb95f', 'text-secondary': '#EDEDED', 'text-dim': '#64748B', 'on-primary-fixed': '#2a1700', 'tertiary-fixed-dim': '#ffb77d', 'border-subtle': 'rgba(255, 255, 255, 0.08)', 'surface-dim': '#121315', 'on-primary-fixed-variant': '#653e00', 'on-background': '#e3e2e5', 'on-tertiary-fixed-variant': '#6e3900', 'on-surface': '#e3e2e5', 'text-muted': '#94A3B8', 'secondary-fixed': '#ffddb3', 'surface-elevated': '#111318', 'on-tertiary-container': '#6a3700', 'on-secondary-container': '#3c2500', 'tertiary-fixed': '#ffdcc3', 'surface': '#121315', 'on-error-container': '#ffdad6', 'border-prominent': 'rgba(255, 255, 255, 0.14)', 'on-surface-variant': '#d8c3ad', 'error-container': '#93000a', 'secondary-fixed-dim': '#ffb951', 'outline-variant': '#534434', 'surface-canvas': '#0D0F12', 'surface-container-high': '#292a2c', 'on-primary': '#472a00', 'background': '#121315', 'on-primary-container': '#613b00', 'surface-container': '#1f2022', 'inverse-on-surface': '#303033', 'surface-bright': '#38393b', 'primary-container': '#f59e0b', 'text-primary': '#F8F9FA', 'surface-tint': '#ffb95f', 'on-tertiary-fixed': '#2f1500', 'inverse-primary': '#855300', 'on-secondary-fixed': '#291800', 'surface-overlay': '#181B21', 'secondary-container': '#c2841a', 'surface-variant': '#343537', 'surface-deep': '#08090B', 'primary-fixed': '#ffddb8', 'tertiary': '#ffc08e', 'on-tertiary': '#4d2600', 'surface-container-low': '#1b1c1e', 'on-error': '#690005', 'error': '#ffb4ab', 'surface-container-lowest': '#0d0e10', 'primary': '#ffc174', 'on-secondary-fixed-variant': '#633f00', 'outline': '#a08e7a', 'secondary': '#ffb951', 'on-secondary': '#452b00' }, 'borderRadius': { 'DEFAULT': '0.25rem', 'lg': '0.5rem', 'xl': '0.75rem', 'full': '9999px' }, 'spacing': { 'margin': '2rem', 'gutter': '1.5rem', 'space-xl': '2.5rem', 'space-lg': '1.5rem', 'gutter-mobile': '1rem', 'margin-mobile': '1rem', 'space-sm': '0.5rem', 'space-md': '1rem', 'space-xs': '0.25rem' }, 'fontFamily': { 'body-lg': ['Geist'], 'label-md': ['Geist'], 'headline-md': ['Geist'], 'headline-sm': ['Geist'], 'body-sm': ['Geist'], 'headline-lg': ['Geist'], 'headline-lg-mobile': ['Geist'], 'body-md': ['Geist'], 'label-sm': ['Geist'], 'display-mobile': ['Geist'], 'display': ['Geist'] }, 'fontSize': { 'body-lg': ['18px', { 'lineHeight': '28px', 'letterSpacing': '-0.01em', 'fontWeight': '400' }], 'label-md': ['13px', { 'lineHeight': '16px', 'letterSpacing': '0.01em', 'fontWeight': '500' }], 'headline-md': ['24px', { 'lineHeight': '32px', 'letterSpacing': '-0.02em', 'fontWeight': '500' }], 'headline-sm': ['20px', { 'lineHeight': '28px', 'letterSpacing': '-0.015em', 'fontWeight': '500' }], 'body-sm': ['13px', { 'lineHeight': '20px', 'letterSpacing': '0em', 'fontWeight': '400' }], 'headline-lg': ['36px', { 'lineHeight': '44px', 'letterSpacing': '-0.025em', 'fontWeight': '600' }], 'headline-lg-mobile': ['28px', { 'lineHeight': '36px', 'letterSpacing': '-0.02em', 'fontWeight': '600' }], 'body-md': ['15px', { 'lineHeight': '24px', 'letterSpacing': '-0.005em', 'fontWeight': '400' }], 'label-sm': ['11px', { 'lineHeight': '14px', 'letterSpacing': '0.03em', 'fontWeight': '500' }], 'display-mobile': ['40px', { 'lineHeight': '48px', 'letterSpacing': '-0.03em', 'fontWeight': '600' }], 'display': ['56px', { 'lineHeight': '64px', 'letterSpacing': '-0.035em', 'fontWeight': '600' }] } } } };</script></head><body class="bg-surface-deep font-body-md text-on-surface antialiased selection:bg-primary/20 selection:text-primary"><header class="fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-surface-deep/80 backdrop-blur-md border-b border-border-subtle"><div class="h-16 max-w-7xl mx-auto px-margin-mobile md:px-margin flex items-center justify-between"><div class="flex items-center gap-3"><img alt="ChaiCircle Minimal Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1XsnaZ_d1G5UW2wNns1L9w0O-TJ8zWCuwVdN8fkU82qDVFlCbgLasaIsP8amHXENfW2m7VTg2D9kVHt2jrdjxdO6RB09VcO1x6k6fFPDqrWL3Re7VVLysz1oT-FAYYuN37cs4CPXtUX6b3LpNz94BpS3dW9WgtlOU67Erc3xLysemjxZD3kAh0qJKoQyr8nNPk5PR33vaGxxCALk1LSdWRk1Hw289Nl59g8hqYQMmLYXKRO4LaQfZcY_eU"/><span class="font-headline-sm text-headline-sm tracking-tight text-on-surface font-semibold">ChaiCircle</span></div><nav class="hidden md:flex items-center gap-1 p-1 bg-surface-elevated/60 backdrop-blur-md rounded-full border border-border-subtle shadow-[0_2px_12px_rgba(0,0,0,0.5)]" data-active-classes="text-on-surface bg-surface-container/70 rounded-full font-label-md text-label-md"><a aria-current="page" class="px-4 py-1.5 transition-all text-on-surface bg-surface-container/70 rounded-full font-label-md text-label-md" data-path="home" href="#">Home</a><a class="px-4 py-1.5 rounded-full text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all font-label-md text-label-md" data-path="communities" href="#">Communities</a><a class="px-4 py-1.5 rounded-full text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all font-label-md text-label-md" data-path="discover" href="#">Discover</a><a class="px-4 py-1.5 rounded-full text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all font-label-md text-label-md" data-path="about" href="#">About</a></nav><div class="flex items-center gap-3"><a class="hidden sm:inline-flex items-center font-label-md text-label-md text-on-surface-variant hover:text-on-surface px-3 py-2 rounded-lg transition-colors" data-path="login" href="#">Log in</a><a class="relative group overflow-hidden inline-flex items-center justify-center font-label-md text-label-md px-4 py-2 rounded-full font-semibold text-on-primary bg-gradient-to-r from-primary-container to-secondary-container hover:brightness-110 active:scale-95 transition-all shadow-[0_0_20px_rgba(245,158,11,0.25)] hover:shadow-[0_0_24px_rgba(245,158,11,0.4)]" data-path="join" href="#"><span class="relative z-10 flex items-center gap-1">Join ChaiCircle <span class="transition-transform duration-200 group-hover:translate-x-0.5">→</span></span></a><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div><button aria-label="Toggle Menu" class="md:hidden flex items-center justify-center w-9 h-9 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors" id="mobile-nav-toggle"><span class="material-symbols-outlined text-[24px]">menu</span></button></div></div><div class="hidden md:hidden border-b border-border-subtle bg-surface-overlay/95 backdrop-blur-xl px-margin-mobile py-space-md" id="mobile-nav-drawer"><div class="flex flex-col gap-1"><a class="flex items-center px-4 py-2.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container font-label-md text-label-md transition-colors" data-path="home" href="#">Home</a><a class="flex items-center px-4 py-2.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container font-label-md text-label-md transition-colors" data-path="communities" href="#">Communities</a><a class="flex items-center px-4 py-2.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container font-label-md text-label-md transition-colors" data-path="discover" href="#">Discover</a><a class="flex items-center px-4 py-2.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container font-label-md text-label-md transition-colors" data-path="about" href="#">About</a><div class="h-px bg-border-subtle my-2"></div><a class="flex items-center px-4 py-2.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container font-label-md text-label-md transition-colors" data-path="login" href="#">Log in</a></div></div></header><main class="w-full pt-16 bg-surface-deep min-h-screen"><div class="flex flex-col w-full text-on-surface overflow-hidden">
+<!-- SECTION 1: HERO SECTION & LIVING NETWORK CANVAS -->
+<section class="relative w-full overflow-hidden bg-surface-deep pt-space-lg md:pt-space-xl pb-space-xl">
+<!-- Atmospheric Ambient Glows -->
+<div class="pointer-events-none absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[720px] h-[520px] bg-gradient-to-b from-primary-container/15 via-primary-container/5 to-transparent blur-[140px] rounded-full"></div>
+<div class="pointer-events-none absolute -top-24 right-10 w-96 h-96 bg-primary-fixed/5 blur-[120px] rounded-full"></div>
+<div class="max-w-7xl mx-auto px-margin-mobile md:px-margin relative z-10">
+<!-- Eyebrow & Hero Header -->
+<div class="flex flex-col items-center text-center max-w-4xl mx-auto mb-space-lg">
+<div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-surface-overlay/80 backdrop-blur-md shadow-sm mb-space-md">
+<span class="w-2 h-2 rounded-full bg-primary-container animate-ping"></span>
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container -ml-3.5"></span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-primary font-semibold">A Place to Belong</span>
+</div>
+<h1 class="font-display text-display md:text-[72px] leading-[1.06] tracking-tighter text-text-primary font-semibold max-w-3xl">
+          Find your people.<br/>
+<span class="bg-gradient-to-r from-text-primary via-primary to-primary-fixed-dim bg-clip-text text-transparent">Start your circle.</span>
+</h1>
+<p class="font-body-lg text-body-lg text-text-muted mt-space-md max-w-2xl text-center">
+          Discover conversations, meet interesting people, and build high-trust communities around the craft, ideas, and curiosities you truly care about.
+        </p>
+<!-- CTA Cluster -->
+<div class="flex flex-col sm:flex-row items-center justify-center gap-3 mt-space-lg w-full sm:w-auto">
+<a class="w-full sm:w-auto px-7 py-3 rounded-full font-label-md text-label-md font-semibold text-on-primary bg-gradient-to-r from-primary-container via-secondary-container to-tertiary-container shadow-[0_4px_24px_rgba(245,158,11,0.28)] hover:brightness-110 active:scale-[0.98] transition-all flex items-center justify-center gap-2 group" href="#">
+<span>Join ChaiCircle</span>
+<span class="material-symbols-outlined text-[18px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+<a class="w-full sm:w-auto px-6 py-3 rounded-full font-label-md text-label-md font-medium text-text-primary bg-surface-overlay/70 hover:bg-surface-container-high transition-all flex items-center justify-center gap-2" href="#discover">
+<span class="material-symbols-outlined text-primary text-[18px]">explore</span>
+<span>Explore Communities</span>
+</a>
+</div>
+<span class="font-label-sm text-label-sm text-text-dim mt-space-sm flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[15px]">verified</span>
+          Made for conversations that actually matter. No vanity feeds.
+        </span>
+</div>
+<!-- HERO VISUAL: DUAL CANVAS (Living Network Graph + Glassmorphic Product Workspace) -->
+<div class="mt-space-md grid grid-cols-1 lg:grid-cols-12 gap-gutter items-center">
+<!-- Living Dynamic Network Canvas (Left: 5 cols) -->
+<div class="lg:col-span-5 relative h-[440px] md:h-[480px] rounded-xl bg-surface-canvas/90 shadow-xl overflow-hidden p-space-md flex flex-col justify-between">
+<div class="flex items-center justify-between z-10">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-primary-container animate-pulse"></span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-text-muted">Live Orbit Network</span>
+</div>
+<span class="font-label-sm text-label-sm px-2.5 py-0.5 rounded-full bg-surface-container-high text-primary font-medium">842 online</span>
+</div>
+<!-- Network Diagram with SVG Pulsing Web -->
+<div class="relative w-full h-full flex items-center justify-center">
+<svg class="absolute inset-0 w-full h-full pointer-events-none stroke-border-subtle" fill="none" viewbox="0 0 400 360">
+<!-- Radiant Hub Web -->
+<circle cx="200" cy="180" opacity="0.35" r="130" stroke="currentColor" stroke-dasharray="3 3"></circle>
+<circle cx="200" cy="180" opacity="0.45" r="75" stroke="currentColor" stroke-dasharray="2 4"></circle>
+<path d="M200 180 L 80 80" opacity="0.7" stroke="url(#amber-ray)" stroke-width="1.2"></path>
+<path d="M200 180 L 320 85" opacity="0.7" stroke="url(#amber-ray)" stroke-width="1.2"></path>
+<path d="M200 180 L 310 270" opacity="0.7" stroke="url(#amber-ray)" stroke-width="1.2"></path>
+<path d="M200 180 L 85 270" opacity="0.7" stroke="url(#amber-ray)" stroke-width="1.2"></path>
+<path d="M200 180 L 200 50" opacity="0.7" stroke="url(#amber-ray)" stroke-width="1.2"></path>
+<defs>
+<lineargradient id="amber-ray" x1="0%" x2="100%" y1="0%" y2="100%">
+<stop offset="0%" stop-color="#f59e0b" stop-opacity="0.8"></stop>
+<stop offset="100%" stop-color="#f59e0b" stop-opacity="0.05"></stop>
+</lineargradient>
+</defs>
+</svg>
+<!-- Center Chai Node -->
+<div class="relative z-20 flex flex-col items-center group cursor-pointer">
+<div class="w-16 h-16 rounded-full bg-gradient-to-tr from-primary-container to-tertiary-container p-0.5 shadow-[0_0_36px_rgba(245,158,11,0.5)] transition-transform duration-300 group-hover:scale-105">
+<div class="w-full h-full rounded-full bg-surface-deep flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-[28px]">coffee</span>
+</div>
+</div>
+<span class="mt-1.5 font-label-sm text-label-sm text-text-primary font-medium">Chai Hub</span>
+</div>
+<!-- Orbit Node 1: Aditi (Design) -->
+<div class="absolute top-10 left-6 z-20 flex items-center gap-2 p-1.5 pr-3 rounded-full bg-surface-elevated/90 shadow-md backdrop-blur-md hover:bg-surface-container transition-all cursor-pointer">
+<img class="w-7 h-7 rounded-full object-cover" data-alt="Close up portrait photograph of Aditi, a female product designer wearing round spectacles with soft studio amber rim lighting and a warm smile" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDgrxUq2FAdYPGXmO9vrCqIz3dTCDWElOr8p7Gn3xDxI9YvRyrY_WFMkBo9G2sF_6XIYZgmQ1wokyyRE4I23AUHMzlmwgf8gCUP6U6pAoziE1WpSHYneqMNc1n-v133RLHqZiDWBPgl3MfqCss9THN8DyXoXloXhijHGA9wXGzGFgZTjuoG_A3IsJafQDasXs7jS7axv4_J9SIW1CUbQySGh-WEUvW30LRGIRSVRmjIJvSeYN4aOmq9"/>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-text-primary font-semibold leading-none">Aditi</span>
+<span class="font-label-sm text-[10px] text-primary leading-tight">Design &amp; Type</span>
+</div>
+</div>
+<!-- Orbit Node 2: Rahul (Tech) -->
+<div class="absolute top-8 right-6 z-20 flex items-center gap-2 p-1.5 pr-3 rounded-full bg-surface-elevated/90 shadow-md backdrop-blur-md hover:bg-surface-container transition-all cursor-pointer">
+<img class="w-7 h-7 rounded-full object-cover" data-alt="Portrait photograph of Rahul, a young male software engineer in a minimal black hoodie illuminated by warm desk lamp glow" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBtezAD0uaz4t3W3D0G2t50EnBIElF64BCLfK-_l8L0YrWVpS-q1OHZaqXYp5yto_-Pf2zze7jRwSmYmrElFRgguB9JlcibMtd0N1Akl1KVxXpLe12SoKa9u8ySaBOVyecl8ZnzaJXKFDvvOwOHeU98AV6n0We-VWIgUQhBv_TLp11z-a66bxMY92BB0cVA91pNnXRnSo_qe1B6_xlk6ZRFa68uh4NarH3ZB-Nkngv0XdScuNGFksd7"/>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-text-primary font-semibold leading-none">Rahul</span>
+<span class="font-label-sm text-[10px] text-text-muted leading-tight">Systems &amp; Rust</span>
+</div>
+</div>
+<!-- Orbit Node 3: Maya (Music) -->
+<div class="absolute bottom-10 right-6 z-20 flex items-center gap-2 p-1.5 pr-3 rounded-full bg-surface-elevated/90 shadow-md backdrop-blur-md hover:bg-surface-container transition-all cursor-pointer">
+<img class="w-7 h-7 rounded-full object-cover" data-alt="Portrait photograph of Maya, an indie electronic music producer with studio headphones draped around her neck in amber mood lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCuV3QRzjFclaojLg-iPcN4UIfsuRGQeX29XP83MqgWKUqOBHqQXkNC5suUHiMSsBTUbXWem2xc_Edi2poYdyzgAzUVI1ScDhFHAlS-ApK-0nHO_l3YDmfsHUFsPeg3ZxDZar7PPNsXwGkWkLXgE2XB9rNrdZ4HZv5AHY5TJUDhHSQp02pPjg52tRXZbCQz_Jif_fOxaJ3R32AofBsiiOapN4TwKF3BPojNWUcvcsiPxO21GHXWVq90"/>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-text-primary font-semibold leading-none">Maya</span>
+<span class="font-label-sm text-[10px] text-tertiary leading-tight">Modular Synth</span>
+</div>
+</div>
+<!-- Orbit Node 4: Arjun (Gaming) -->
+<div class="absolute bottom-10 left-6 z-20 flex items-center gap-2 p-1.5 pr-3 rounded-full bg-surface-elevated/90 shadow-md backdrop-blur-md hover:bg-surface-container transition-all cursor-pointer">
+<div class="w-7 h-7 rounded-full bg-surface-container-highest flex items-center justify-center text-primary font-bold text-[12px]">AJ</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-text-primary font-semibold leading-none">Arjun</span>
+<span class="font-label-sm text-[10px] text-text-muted leading-tight">Indie Gaming</span>
+</div>
+</div>
+<!-- Floating Micro Snippets -->
+<div class="absolute top-[48%] -left-1 hidden sm:flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-overlay/95 shadow-md text-text-secondary font-label-sm text-label-sm animate-pulse">
+<span class="text-primary text-[11px]">✦</span>
+<span>"Anyone into ambient jazz?"</span>
+</div>
+<div class="absolute top-[32%] right-2 hidden sm:flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-overlay/95 shadow-md text-text-secondary font-label-sm text-label-sm">
+<span class="text-primary text-[11px]">●</span>
+<span>"Bangalore meetup this Sat?"</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-space-xs text-text-dim font-label-sm text-label-sm">
+<span>Dynamic clustering</span>
+<span class="text-primary font-mono text-[11px]">ping: 18ms</span>
+</div>
+</div>
+<!-- Sleek ChaiCircle Product Window UI (Right: 7 cols) -->
+<div class="lg:col-span-7 bg-surface-canvas/95 rounded-xl shadow-2xl overflow-hidden backdrop-blur-xl flex flex-col">
+<!-- Window Header Bar -->
+<div class="px-space-md py-3 bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-surface-container-highest inline-block"></span>
+<span class="w-3 h-3 rounded-full bg-surface-container-highest inline-block"></span>
+<span class="w-3 h-3 rounded-full bg-surface-container-highest inline-block"></span>
+<span class="ml-2 font-label-sm text-label-sm text-text-muted font-medium flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[16px]">bubble_chart</span>
+                ChaiCircle Desktop Workspace
+              </span>
+</div>
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 rounded bg-surface-container font-mono text-[11px] text-text-dim">v2.4.0</span>
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+</div>
+</div>
+<!-- Product Window Content Area -->
+<div class="p-space-md grid grid-cols-1 md:grid-cols-12 gap-space-md">
+<!-- Left Sub-Panel: Active Live Spaces -->
+<div class="md:col-span-5 flex flex-col gap-space-xs bg-surface-container-lowest p-space-sm rounded-lg">
+<span class="font-label-sm text-[11px] uppercase tracking-wider text-text-dim px-2 mb-1">Live Chai Rooms</span>
+<div class="p-2.5 rounded-lg bg-surface-overlay/80 hover:bg-surface-container transition-all cursor-pointer flex flex-col gap-1 shadow-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-text-primary font-medium flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-primary-container"></span>
+                    Late Night Creators
+                  </span>
+<span class="font-label-sm text-[11px] text-primary">LIVE</span>
+</div>
+<p class="font-body-sm text-[12px] text-text-muted line-clamp-1">Prototyping canvas layouts &amp; coffee</p>
+<div class="flex items-center justify-between mt-1 pt-1">
+<div class="flex -space-x-1.5 overflow-hidden">
+<span class="w-5 h-5 rounded-full bg-surface-bright text-text-primary text-[10px] flex items-center justify-center font-bold">R</span>
+<span class="w-5 h-5 rounded-full bg-primary text-on-primary text-[10px] flex items-center justify-center font-bold">A</span>
+<span class="w-5 h-5 rounded-full bg-surface-container-highest text-text-dim text-[10px] flex items-center justify-center">+18</span>
+</div>
+<span class="font-label-sm text-[11px] text-text-dim">44 active</span>
+</div>
+</div>
+<div class="p-2.5 rounded-lg bg-surface-container-low hover:bg-surface-overlay transition-all cursor-pointer flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-text-primary font-medium flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-text-dim"></span>
+                    Frontend Craft
+                  </span>
+<span class="font-label-sm text-[11px] text-text-dim">1.2k mem</span>
+</div>
+<p class="font-body-sm text-[12px] text-text-muted line-clamp-1">Tailwind vs CSS Grid arguments</p>
+</div>
+<div class="p-2.5 rounded-lg bg-surface-container-low hover:bg-surface-overlay transition-all cursor-pointer flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-text-primary font-medium flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-text-dim"></span>
+                    Solo Founders Club
+                  </span>
+<span class="font-label-sm text-[11px] text-text-dim">3.8k mem</span>
+</div>
+<p class="font-body-sm text-[12px] text-text-muted line-clamp-1">Week 12 metrics honest breakdown</p>
+</div>
+</div>
+<!-- Right Sub-Panel: Active Conversation Stream -->
+<div class="md:col-span-7 flex flex-col justify-between bg-surface-container-lowest p-space-sm rounded-lg min-h-[260px]">
+<div class="space-y-space-sm">
+<div class="flex items-center justify-between pb-space-xs">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[18px]">forum</span>
+<span class="font-label-md text-label-md text-text-primary font-semibold"># craft-and-coffee</span>
+</div>
+<span class="font-label-sm text-label-sm text-text-dim">Warm Moderation</span>
+</div>
+<!-- Message 1 -->
+<div class="flex items-start gap-2.5">
+<span class="w-7 h-7 rounded-full bg-primary-container/20 text-primary flex items-center justify-center font-bold text-label-sm shrink-0">VK</span>
+<div class="bg-surface-container-high/60 p-2.5 rounded-xl rounded-tl-none">
+<div class="flex items-center gap-2 mb-0.5">
+<span class="font-label-sm text-label-sm text-text-primary font-medium">Vikram</span>
+<span class="font-label-sm text-[10px] text-text-dim">2m ago</span>
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary">Building an audio visualizer with Web Audio API. Anyone know how to smoothen the frequency bins without latency?</p>
+</div>
+</div>
+<!-- Message 2 (Reply with amber glow highlight) -->
+<div class="flex items-start gap-2.5 ml-4">
+<span class="w-7 h-7 rounded-full bg-tertiary-container/30 text-tertiary flex items-center justify-center font-bold text-label-sm shrink-0">SZ</span>
+<div class="bg-surface-overlay p-2.5 rounded-xl rounded-tl-none shadow-[0_0_12px_rgba(245,158,11,0.08)]">
+<div class="flex items-center gap-2 mb-0.5">
+<span class="font-label-sm text-label-sm text-primary font-medium">Sana (DSP dev)</span>
+<span class="font-label-sm text-[10px] text-text-dim">Just now</span>
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary">Use smoothingTimeConstant = 0.85 and interpolate between frames via requestAnimationFrame! Works like butter.</p>
+</div>
+</div>
+</div>
+<!-- Interactive Simulated Reply Input -->
+<div class="mt-space-sm pt-space-xs flex items-center gap-2 bg-surface-container rounded-full px-3 py-1.5 shadow-sm">
+<input class="bg-transparent text-text-primary placeholder:text-text-dim font-body-sm text-body-sm w-full focus:outline-none" placeholder="Add a mindful thought..." readonly="" type="text"/>
+<button class="w-6 h-6 rounded-full bg-primary text-on-primary flex items-center justify-center shrink-0 hover:brightness-110">
+<span class="material-symbols-outlined text-[14px]">send</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 2: TOPIC PILLS & REAL-TIME ACTIVITY BANNER -->
+<section class="w-full bg-surface-canvas py-space-md shadow-sm">
+<div class="max-w-7xl mx-auto px-margin-mobile md:px-margin">
+<div class="flex flex-col md:flex-row items-center justify-between gap-space-md">
+<div class="flex items-center gap-2 shrink-0">
+<span class="w-2 h-2 rounded-full bg-primary-container animate-pulse"></span>
+<span class="font-label-md text-label-md text-text-muted">Explore spheres of interest:</span>
+</div>
+<!-- Horizontally Scrollable / Flex Wrap Pills -->
+<div class="flex items-center gap-2 overflow-x-auto w-full md:w-auto pb-1 md:pb-0 scrollbar-none">
+<button class="px-3.5 py-1.5 rounded-full bg-surface-overlay text-text-secondary hover:text-primary hover:bg-surface-container font-label-md text-label-md transition-all shrink-0">
+            # Technology
+          </button>
+<button class="px-3.5 py-1.5 rounded-full bg-surface-overlay text-text-secondary hover:text-primary hover:bg-surface-container font-label-md text-label-md transition-all shrink-0">
+            # Design &amp; Craft
+          </button>
+<button class="px-3.5 py-1.5 rounded-full bg-surface-overlay text-text-secondary hover:text-primary hover:bg-surface-container font-label-md text-label-md transition-all shrink-0">
+            # Indie Music
+          </button>
+<button class="px-3.5 py-1.5 rounded-full bg-surface-overlay text-text-secondary hover:text-primary hover:bg-surface-container font-label-md text-label-md transition-all shrink-0">
+            # Solo Startups
+          </button>
+<button class="px-3.5 py-1.5 rounded-full bg-surface-overlay text-text-secondary hover:text-primary hover:bg-surface-container font-label-md text-label-md transition-all shrink-0">
+            # Cinema &amp; Anime
+          </button>
+<button class="px-3.5 py-1.5 rounded-full bg-surface-overlay text-text-secondary hover:text-primary hover:bg-surface-container font-label-md text-label-md transition-all shrink-0">
+            # Philosophy
+          </button>
+<button class="px-3.5 py-1.5 rounded-full bg-surface-overlay text-text-secondary hover:text-primary hover:bg-surface-container font-label-md text-label-md transition-all shrink-0">
+            # Photography
+          </button>
+</div>
+<div class="shrink-0 flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container-high font-label-sm text-label-sm text-text-dim">
+<span class="text-primary font-semibold">48,290+</span> conversations this week
+        </div>
+</div>
+</div>
+</section>
+<!-- SECTION 3: THE PROBLEM & EDITORIAL CONTRAST -->
+<section class="w-full py-space-xl bg-surface-deep relative">
+<div class="max-w-7xl mx-auto px-margin-mobile md:px-margin">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-center">
+<!-- Left: Editorial Headline -->
+<div class="lg:col-span-6 space-y-space-md">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-primary font-semibold">The Shift in Ritual</span>
+<h2 class="font-headline-lg text-headline-lg md:text-[44px] leading-tight text-text-primary font-bold">
+            The modern web is overwhelmingly loud. <span class="text-text-dim">Finding authentic circles shouldn't feel like survival.</span>
+</h2>
+<p class="font-body-lg text-body-lg text-text-muted leading-relaxed">
+            Mainstream feeds monetize indignation, superficial impressions, and endless swiping. ChaiCircle is anchored in an ancient human ritual: taking pause, sharing a warm cup, and having honest conversations that nurture curiosity rather than addiction.
+          </p>
+<div class="grid grid-cols-2 gap-space-md pt-space-sm">
+<div class="p-space-md rounded-xl bg-surface-canvas shadow-sm">
+<span class="font-headline-md text-headline-md font-bold text-text-primary">Zero</span>
+<p class="font-body-sm text-body-sm text-text-muted mt-1">Algorithmically curated feeds engineered to enrage or distract.</p>
+</div>
+<div class="p-space-md rounded-xl bg-surface-canvas shadow-sm">
+<span class="font-headline-md text-headline-md font-bold text-primary">100%</span>
+<p class="font-body-sm text-body-sm text-text-muted mt-1">Direct community membership where your presence is valued.</p>
+</div>
+</div>
+</div>
+<!-- Right: Chaotic Feeds vs Warm Amber Harmony -->
+<div class="lg:col-span-6 relative">
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
+<!-- Fragment 1: The Noise -->
+<div class="p-space-md rounded-xl bg-surface-canvas/60 space-y-3 opacity-60">
+<div class="flex items-center justify-between text-text-dim font-label-sm text-label-sm">
+<span class="line-through">Algorithmic Feed</span>
+<span class="material-symbols-outlined text-[16px]">close</span>
+</div>
+<div class="space-y-2">
+<div class="h-3 w-3/4 rounded bg-surface-container-highest"></div>
+<div class="h-3 w-full rounded bg-surface-container-highest"></div>
+<div class="h-3 w-1/2 rounded bg-surface-container-highest"></div>
+</div>
+<span class="inline-block text-[11px] text-error font-mono">Engagement Bait Detected</span>
+</div>
+<!-- Fragment 2: The ChaiCircle Sanctuary -->
+<div class="p-space-md rounded-xl bg-surface-overlay shadow-xl space-y-3 relative overflow-hidden">
+<div class="absolute -right-4 -bottom-4 w-24 h-24 bg-primary-container/10 rounded-full blur-xl pointer-events-none"></div>
+<div class="flex items-center justify-between font-label-sm text-label-sm">
+<span class="text-primary font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+                  ChaiCircle Room
+                </span>
+<span class="font-mono text-[10px] text-primary">Active</span>
+</div>
+<p class="font-body-md text-body-md text-text-primary font-medium">
+                "We spent two hours reviewing typography pairings for open-source books. Felt so restorative."
+              </p>
+<div class="flex items-center gap-2 pt-1">
+<span class="w-6 h-6 rounded-full bg-primary text-on-primary font-bold text-[10px] flex items-center justify-center">MK</span>
+<span class="font-label-sm text-label-sm text-text-dim">Manya &amp; 12 others in voice</span>
+</div>
+</div>
+<!-- Fragment 3: Context Before Clout -->
+<div class="sm:col-span-2 p-space-md rounded-xl bg-surface-canvas flex flex-col sm:flex-row items-start sm:items-center justify-between gap-space-sm">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">diversity_3</span>
+</div>
+<div>
+<h4 class="font-headline-sm text-headline-sm text-text-primary">Human-Sized Spaces</h4>
+<p class="font-body-sm text-body-sm text-text-dim">Circles capped at intimate sizes so every member has voice.</p>
+</div>
+</div>
+<span class="px-3 py-1 rounded-full bg-primary-container/15 text-primary font-label-sm text-label-sm shrink-0">High-Trust Architecture</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 4: DISCOVER COMMUNITIES (INTERACTIVE DISCOVERY GRID) -->
+<section class="w-full py-space-xl bg-surface-canvas" id="discover">
+<div class="max-w-7xl mx-auto px-margin-mobile md:px-margin">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-space-lg gap-space-sm">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-primary font-semibold">Community Discovery</span>
+<h2 class="font-headline-lg text-headline-lg text-text-primary font-bold mt-1">Something interesting is always brewing.</h2>
+</div>
+<!-- Filter Pill Controls -->
+<div class="flex items-center gap-1.5 bg-surface-overlay p-1 rounded-full overflow-x-auto">
+<button class="px-4 py-1.5 rounded-full bg-primary text-on-primary font-label-md text-label-md font-semibold transition-all">Trending</button>
+<button class="px-4 py-1.5 rounded-full text-text-muted hover:text-text-primary hover:bg-surface-container font-label-md text-label-md transition-all">Engineering</button>
+<button class="px-4 py-1.5 rounded-full text-text-muted hover:text-text-primary hover:bg-surface-container font-label-md text-label-md transition-all">Design &amp; Craft</button>
+<button class="px-4 py-1.5 rounded-full text-text-muted hover:text-text-primary hover:bg-surface-container font-label-md text-label-md transition-all">Audio / Synth</button>
+</div>
+</div>
+<!-- Discovery Cards Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+<!-- Community Card 1 -->
+<div class="group rounded-xl bg-surface-overlay p-space-md shadow-md hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
+<div>
+<div class="flex items-start justify-between mb-space-sm">
+<div class="w-12 h-12 rounded-xl bg-surface-container-high flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-[26px]">terminal</span>
+</div>
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-surface-container font-label-sm text-label-sm text-primary">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span> Voice Room Active
+              </span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-text-primary font-semibold group-hover:text-primary transition-colors">Frontend Builders</h3>
+<p class="font-body-md text-body-md text-text-muted mt-space-xs leading-relaxed">
+              Deep dives into modern rendering runtimes, high-fidelity micro-interactions, canvas graphics, and zero-latency web tools.
+            </p>
+</div>
+<div class="mt-space-md pt-space-sm flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="flex -space-x-2">
+<img class="w-6 h-6 rounded-full object-cover" data-alt="Small round avatar portrait of Devika, a front end engineer in dark surroundings with blue code reflections on glasses" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAYsBgJMZZPJOpy2YxrujAama0JwUbjq-ncIxdszXuRZSSn3EBE4dL5v-Srf_dUaYuraHxOjMtnP512JrB-E2OAzw4Kk2qjagpB_HyOI2hiqyIPCmAHKTTdRLDMbgc5W9rT_AKp8J32-iV6MGLrz6A94cO5tRfP9wgxBpyIE8TBCcv2zS5IZErbICgqfe8IBKOn_NkbiIqgKwx6e1Z5ShSxk_BxKfg78wnaEquEL7NNquhZWNAnb8Xz"/>
+<img class="w-6 h-6 rounded-full object-cover" data-alt="Small round avatar portrait of Liam, an indie web developer with beanie hat and amber backlight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCaseSgE0ulymAtGfzfg5WJyGWSmXjd7eFhkA1amWOhnyCTqVaI8vDW6o4M1txX-JweUaAU_IsHFtsGTKKJ5mGKcPhurQx7bD5sF4rZFarBzkWc2pgVruSTLTGHQg7pNhB5lgUT79iD8xgF2gp3ldnwaaBS78vBzDnUP5853R1HlYfKx5lBWE1hRCXX-owB4LX7G-trXKBf8y9MXu7CVt8Vx-ZMautaO8BfMpUz5Xfe0un1mzR3Szj7"/>
+<span class="w-6 h-6 rounded-full bg-surface-container-highest text-text-dim text-[10px] flex items-center justify-center font-semibold">+12k</span>
+</div>
+<span class="font-label-sm text-label-sm text-text-dim">12.4k builders</span>
+</div>
+<button class="px-3.5 py-1.5 rounded-full font-label-sm text-label-sm font-semibold bg-surface-container hover:bg-primary hover:text-on-primary text-text-primary transition-all">
+              Join Circle
+            </button>
+</div>
+</div>
+<!-- Community Card 2 -->
+<div class="group rounded-xl bg-surface-overlay p-space-md shadow-md hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
+<div>
+<div class="flex items-start justify-between mb-space-sm">
+<div class="w-12 h-12 rounded-xl bg-surface-container-high flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-[26px]">headphones</span>
+</div>
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-surface-container font-label-sm text-label-sm text-tertiary">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span> Jamming Now
+              </span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-text-primary font-semibold group-hover:text-primary transition-colors">Analog &amp; Synth Beats</h3>
+<p class="font-body-md text-body-md text-text-muted mt-space-xs leading-relaxed">
+              Lo-fi tape saturation, Eurorack modular workflows, sample clearance debates, and collaborative weekend jam sessions.
+            </p>
+</div>
+<div class="mt-space-md pt-space-sm flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="flex -space-x-2">
+<img class="w-6 h-6 rounded-full object-cover" data-alt="Square portrait of Kabir, an audio engineer adjusting an equalizer slider with warm amber studio lights" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAeq2fJapQnOC0zlFvfuZhkZuu1yrCBMq4k2sqMv4FvbWtTv0mJYev84V7kBZXDWjqSlR7T7NYJSRPfLspgclfqPGZ53i194_NsltEi_X1QcWLSbtBrZ4tjgM6WoP7Wc4F5CsmjS-tdooYx98h6AMz8MuXJgpceTvVhgA1uDDd5wxE234yY9MDzy4aNzbfb7rtum4ag8hV0QVbsz-GeeCutmtBbLDxL5FE1MTAAYluuvb9_d6mx-2xF"/>
+<span class="w-6 h-6 rounded-full bg-surface-container-highest text-text-dim text-[10px] flex items-center justify-center font-semibold">+5k</span>
+</div>
+<span class="font-label-sm text-label-sm text-text-dim">5.1k soundmakers</span>
+</div>
+<button class="px-3.5 py-1.5 rounded-full font-label-sm text-label-sm font-semibold bg-surface-container hover:bg-primary hover:text-on-primary text-text-primary transition-all">
+              Join Circle
+            </button>
+</div>
+</div>
+<!-- Community Card 3 -->
+<div class="group rounded-xl bg-surface-overlay p-space-md shadow-md hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
+<div>
+<div class="flex items-start justify-between mb-space-sm">
+<div class="w-12 h-12 rounded-xl bg-surface-container-high flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-[26px]">rocket_launch</span>
+</div>
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-surface-container font-label-sm text-label-sm text-text-muted">
+                Weekly Standup
+              </span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-text-primary font-semibold group-hover:text-primary transition-colors">Solo Bootstrappers</h3>
+<p class="font-body-md text-body-md text-text-muted mt-space-xs leading-relaxed">
+              Transparent revenue sharing, pricing strategy, distribution hacks, and mental fitness for founders building profitable software alone.
+            </p>
+</div>
+<div class="mt-space-md pt-space-sm flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="flex -space-x-2">
+<img class="w-6 h-6 rounded-full object-cover" data-alt="Portrait photo of Ananya, a technology startup founder in a coffee shop working on her lightweight laptop" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCv5LEQN6NLVzjlqBQeQYdHrxADrrcauac9uI7r1tWQYi7wCUjY0l300Jbt4yb4ZbF_hfYBcpoUlI25cAPI0D1Z-qPEQxfl1F-0cz8RlLtDfPGlHWsp851LBJ9zHW0u6CmDqdjR6gmCqSZxXPjHASZPsbGrQZsZMOeeQoQIihLaRHYiQleC_4X9T29ih3FoEG1Sc72smZaW0m4f3rRverlakpnr48oW215d7OGvczaCr63w2zDpDe-6"/>
+<span class="w-6 h-6 rounded-full bg-surface-container-highest text-text-dim text-[10px] flex items-center justify-center font-semibold">+6k</span>
+</div>
+<span class="font-label-sm text-label-sm text-text-dim">6.7k bootstrappers</span>
+</div>
+<button class="px-3.5 py-1.5 rounded-full font-label-sm text-label-sm font-semibold bg-surface-container hover:bg-primary hover:text-on-primary text-text-primary transition-all">
+              Join Circle
+            </button>
+</div>
+</div>
+<!-- Community Card 4 -->
+<div class="group rounded-xl bg-surface-overlay p-space-md shadow-md hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
+<div>
+<div class="flex items-start justify-between mb-space-sm">
+<div class="w-12 h-12 rounded-xl bg-surface-container-high flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-[26px]">palette</span>
+</div>
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-surface-container font-label-sm text-label-sm text-primary">
+                Review Friday
+              </span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-text-primary font-semibold group-hover:text-primary transition-colors">Editorial Typography</h3>
+<p class="font-body-md text-body-md text-text-muted mt-space-xs leading-relaxed">
+              Curated font specimens, variable font experimentation, book layout grids, and critiques for meticulous visual designers.
+            </p>
+</div>
+<div class="mt-space-md pt-space-sm flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm text-text-dim">3.4k typographers</span>
+</div>
+<button class="px-3.5 py-1.5 rounded-full font-label-sm text-label-sm font-semibold bg-surface-container hover:bg-primary hover:text-on-primary text-text-primary transition-all">
+              Join Circle
+            </button>
+</div>
+</div>
+<!-- Community Card 5 -->
+<div class="group rounded-xl bg-surface-overlay p-space-md shadow-md hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
+<div>
+<div class="flex items-start justify-between mb-space-sm">
+<div class="w-12 h-12 rounded-xl bg-surface-container-high flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-[26px]">videogame_asset</span>
+</div>
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-surface-container font-label-sm text-label-sm text-text-dim">
+                Party Active
+              </span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-text-primary font-semibold group-hover:text-primary transition-colors">Indie Game Devs &amp; Roguelikes</h3>
+<p class="font-body-md text-body-md text-text-muted mt-space-xs leading-relaxed">
+              Pixel art assets, Godot shaders, playtesting feedback loops, and cozy late-night cooperative sessions.
+            </p>
+</div>
+<div class="mt-space-md pt-space-sm flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm text-text-dim">8.9k gamers</span>
+</div>
+<button class="px-3.5 py-1.5 rounded-full font-label-sm text-label-sm font-semibold bg-surface-container hover:bg-primary hover:text-on-primary text-text-primary transition-all">
+              Join Circle
+            </button>
+</div>
+</div>
+<!-- Community Card 6 -->
+<div class="group rounded-xl bg-surface-overlay p-space-md shadow-md hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
+<div>
+<div class="flex items-start justify-between mb-space-sm">
+<div class="w-12 h-12 rounded-xl bg-surface-container-high flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-[26px]">menu_book</span>
+</div>
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-surface-container font-label-sm text-label-sm text-primary">
+                Book Club
+              </span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-text-primary font-semibold group-hover:text-primary transition-colors">Speculative Fiction &amp; Sci-Fi</h3>
+<p class="font-body-md text-body-md text-text-muted mt-space-xs leading-relaxed">
+              Dissecting Ted Chiang, Ursula K. Le Guin, solar-punk futures, and hosting asynchronous chapter reading sessions.
+            </p>
+</div>
+<div class="mt-space-md pt-space-sm flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm text-text-dim">4.2k readers</span>
+</div>
+<button class="px-3.5 py-1.5 rounded-full font-label-sm text-label-sm font-semibold bg-surface-container hover:bg-primary hover:text-on-primary text-text-primary transition-all">
+              Join Circle
+            </button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 5: THE ART OF CONVERSATION (THREAD EXCELLENCE) -->
+<section class="w-full py-space-xl bg-surface-deep relative">
+<div class="max-w-7xl mx-auto px-margin-mobile md:px-margin">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-center">
+<!-- Thread Mockup Preview -->
+<div class="lg:col-span-7 bg-surface-canvas p-space-md md:p-space-lg rounded-2xl shadow-2xl relative">
+<!-- Room Header -->
+<div class="flex items-center justify-between pb-space-sm">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-primary-container/20 flex items-center justify-center text-primary font-semibold text-[13px]">#</div>
+<div>
+<h4 class="font-headline-sm text-headline-sm text-text-primary">What's something you're building right now?</h4>
+<p class="font-label-sm text-label-sm text-text-dim">Posted by Tarun • in #creators-lounge</p>
+</div>
+</div>
+<span class="px-2.5 py-1 rounded-full bg-surface-overlay text-text-muted font-label-sm text-label-sm">48 replies</span>
+</div>
+<!-- Vertical Thread Flow with glowing connection -->
+<div class="space-y-space-md relative mt-space-sm pl-4 sm:pl-6 before:absolute before:left-7 before:top-4 before:bottom-6 before:w-[2px] before:bg-gradient-to-b before:from-primary-container before:via-surface-container-highest before:to-transparent">
+<!-- Reply 1 -->
+<div class="relative flex items-start gap-3">
+<img class="w-8 h-8 rounded-full object-cover shrink-0 relative z-10" data-alt="Portrait photograph of Devika smiling softly with warm background glow in an evening studio" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZpDRFi97Y2MxHXOqtgpH81nhtPI_bec30zFA3PkkLqYWsk7GlwDsC7mhKn6KparPn_QIKTbs6TrKa44mzO5HZLU3eDShvN-xx6hco0IF7bJwNTh47sYA3m0m28guDWJ_ZQdrTHsL_6NhGzG90iMRlwSInwc-p2LHJk9KZkxQlvWJJegWV7g1fhrIcXubQcKcfAhxwGjBUXyDHfMzA0w_Ucz2qqL9dJPJ10-hh2YqlfpOmoLekmyq1"/>
+<div class="p-space-sm rounded-xl bg-surface-overlay shadow-sm w-full">
+<div class="flex items-center justify-between mb-1">
+<span class="font-label-md text-label-md text-text-primary font-semibold">Devika • <span class="font-normal text-text-dim text-[12px]">WebGL Architect</span></span>
+<span class="font-label-sm text-[11px] text-text-dim">12m ago</span>
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary leading-relaxed">
+                  Re-architecting an open source canvas tool in WebGL. It’s tough juggling shader performance on mobile, but seeing 60fps tactile strokes makes every debug hour worth it.
+                </p>
+</div>
+</div>
+<!-- Reply 2 -->
+<div class="relative flex items-start gap-3">
+<img class="w-8 h-8 rounded-full object-cover shrink-0 relative z-10" data-alt="Portrait photo of Marcus, a Danish designer wearing glasses in natural ambient daylight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVC_kPvKalX350618DKoTHJ2NmiAWJN2p0CPDIs_hTaVw6B_42iHDXFRypi927r2EsmXTH6ZVCXrskB0OnA-kxOomXE0OCURSL5lF_8CV5AnKPYEjj5h4bt3ZLyPR7mHin-7AWWKAZet1YZcewj4zpLE5k_aQ2r1gu3fRwoBb64JicC_1YxURE6Y05ok7xrrbRPU5RcpfPCDavgJTTNWw94n56b8AeU1N_McTCt2sIr3nLGEK0Pj5j"/>
+<div class="p-space-sm rounded-xl bg-surface-overlay shadow-sm w-full">
+<div class="flex items-center justify-between mb-1">
+<span class="font-label-md text-label-md text-text-primary font-semibold">Marcus • <span class="font-normal text-text-dim text-[12px]">Editorial Lead</span></span>
+<span class="font-label-sm text-[11px] text-text-dim">8m ago</span>
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary leading-relaxed">
+                  Pairing with a founder in Berlin on an editorial reading app. We replaced standard serif bodies with custom variable glyphs that subtly widen based on reader ambient light.
+                </p>
+</div>
+</div>
+<!-- Reply 3 with Typing indicator -->
+<div class="relative flex items-start gap-3">
+<div class="w-8 h-8 rounded-full bg-primary text-on-primary flex items-center justify-center font-bold text-label-sm shrink-0 relative z-10">RK</div>
+<div class="p-3 rounded-xl bg-surface-container-high/70 flex items-center gap-2 text-text-dim font-label-sm text-label-sm">
+<span>Rahul is typing</span>
+<span class="flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-bounce"></span>
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-bounce [animation-delay:0.2s]"></span>
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-bounce [animation-delay:0.4s]"></span>
+</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Right: Text & Statement -->
+<div class="lg:col-span-5 space-y-space-md">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-primary font-semibold">The Art of Conversation</span>
+<h2 class="font-headline-lg text-headline-lg text-text-primary font-bold leading-tight">
+            Good conversations create unexpected connections.
+          </h2>
+<p class="font-body-lg text-body-lg text-text-muted leading-relaxed">
+            No clickbait headlines, no automated bot replies, and no influencer hierarchies. Every circle is designed for intentional exchanges where questions receive thoughtful answers.
+          </p>
+<div class="space-y-space-sm pt-space-xs">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-[22px]">timer</span>
+<p class="font-body-md text-body-md text-text-secondary">Paced for depth rather than rapid doomscrolling reflexes.</p>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-[22px]">lock_clock</span>
+<p class="font-body-md text-body-md text-text-secondary">Ephemeral voice huddles that disappear once the tea cools down.</p>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-[22px]">handshake</span>
+<p class="font-body-md text-body-md text-text-secondary">Mutual respect baked into circle norms and moderator guidelines.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 6: COMMUNITY BENTO GRID (BESPOKE MULTI-DIMENSIONAL TILES) -->
+<section class="w-full py-space-xl bg-surface-canvas">
+<div class="max-w-7xl mx-auto px-margin-mobile md:px-margin">
+<div class="text-center max-w-2xl mx-auto mb-space-lg">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-primary font-semibold">Eclectic Realms</span>
+<h2 class="font-headline-lg text-headline-lg text-text-primary font-bold mt-1">Find a circle for whatever you're into.</h2>
+<p class="font-body-md text-body-md text-text-muted mt-2">Whether high-level systems architecture or micro-niche analog hobbies, your subculture is already meeting here.</p>
+</div>
+<!-- Bento Structure -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Bento 1: Tech Code Preview (Large 7 cols) -->
+<div class="md:col-span-7 bg-surface-overlay p-space-md md:p-space-lg rounded-2xl shadow-md flex flex-col justify-between overflow-hidden relative">
+<div class="space-y-space-xs relative z-10">
+<div class="flex items-center gap-2 text-primary font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[20px]">code</span>
+              Engineering &amp; Systems
+            </div>
+<h3 class="font-headline-md text-headline-md text-text-primary font-semibold">Under the hood discussions</h3>
+<p class="font-body-sm text-body-sm text-text-muted max-w-lg">From zero-knowledge proofs to WebAssembly graphics engines, engineers discuss architecture without recruiter spam.</p>
+</div>
+<!-- Code Snippet Mockup -->
+<div class="mt-space-md p-space-sm rounded-xl bg-surface-deep/90 font-mono text-[12px] text-text-secondary shadow-inner overflow-x-auto">
+<div class="flex items-center justify-between text-text-dim text-[11px] pb-2 mb-2 border-b border-border-subtle">
+<span>circle_sync.rs</span>
+<span class="text-primary">fn broadcast_heartbeat()</span>
+</div>
+<span class="text-text-dim">// Zero-latency peer mesh connection</span><br/>
+<span class="text-tertiary">async fn</span> <span class="text-primary">connect_circle</span>(peer: &amp;PeerId) -&gt; Result&lt;WarmSession&gt; {<br/>
+              <span class="text-secondary">let</span> stream = Mesh::dial(peer).await?;<br/>
+              stream.send(Signal::Warmth(0.95)).await?;<br/>
+              <span class="text-text-primary">Ok(WarmSession::new(stream))</span><br/>
+            }
+          </div>
+</div>
+<!-- Bento 2: Audio & Music Synthesizer (5 cols) -->
+<div class="md:col-span-5 bg-surface-overlay p-space-md md:p-space-lg rounded-2xl shadow-md flex flex-col justify-between">
+<div class="space-y-space-xs">
+<div class="flex items-center gap-2 text-tertiary font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[20px]">graphic_eq</span>
+              Sound &amp; Lo-Fi Frequency
+            </div>
+<h3 class="font-headline-md text-headline-md text-text-primary font-semibold">Real-time Jam Lounges</h3>
+<p class="font-body-sm text-body-sm text-text-muted">Listen in or plug in your hardware synth. Ambient radio streamed by community members 24/7.</p>
+</div>
+<!-- SVG Audio Equalizer Waveform -->
+<div class="mt-space-md p-space-md rounded-xl bg-surface-container-low flex items-end justify-center gap-1.5 h-32">
+<span class="w-2 rounded-full bg-primary-container/80 h-10 animate-pulse"></span>
+<span class="w-2 rounded-full bg-primary-container h-16 animate-pulse [animation-delay:0.1s]"></span>
+<span class="w-2 rounded-full bg-primary h-24 animate-pulse [animation-delay:0.25s]"></span>
+<span class="w-2 rounded-full bg-tertiary h-20 animate-pulse [animation-delay:0.15s]"></span>
+<span class="w-2 rounded-full bg-primary h-28 animate-pulse [animation-delay:0.3s]"></span>
+<span class="w-2 rounded-full bg-primary-container h-12 animate-pulse [animation-delay:0.05s]"></span>
+<span class="w-2 rounded-full bg-tertiary-container h-18 animate-pulse [animation-delay:0.2s]"></span>
+<span class="w-2 rounded-full bg-primary h-24 animate-pulse [animation-delay:0.35s]"></span>
+<span class="w-2 rounded-full bg-primary-container/60 h-8 animate-pulse"></span>
+</div>
+</div>
+<!-- Bento 3: Local Circles Across Continents (Wide 8 cols) -->
+<div class="md:col-span-8 bg-surface-overlay p-space-md md:p-space-lg rounded-2xl shadow-md flex flex-col justify-between">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm mb-space-sm">
+<div>
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-wider font-semibold">Local Meetups</span>
+<h3 class="font-headline-md text-headline-md text-text-primary font-semibold">From Bangalore to Berlin</h3>
+</div>
+<span class="px-3 py-1 rounded-full bg-surface-container text-text-muted font-label-sm text-label-sm">18 global chapters</span>
+</div>
+<p class="font-body-md text-body-md text-text-muted max-w-xl">
+            Online circles regularly translate into real-world gatherings at indie tea stalls, coffee roasters, and park benches.
+          </p>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-space-sm mt-space-md">
+<div class="p-space-sm rounded-lg bg-surface-container-high text-center">
+<span class="font-headline-sm text-headline-sm text-text-primary font-bold">BLR</span>
+<p class="font-label-sm text-label-sm text-text-dim">Indiranagar Chai</p>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container-high text-center">
+<span class="font-headline-sm text-headline-sm text-text-primary font-bold">BER</span>
+<p class="font-label-sm text-label-sm text-text-dim">Kreuzberg Circle</p>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container-high text-center">
+<span class="font-headline-sm text-headline-sm text-text-primary font-bold">SFO</span>
+<p class="font-label-sm text-label-sm text-text-dim">Mission Collective</p>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container-high text-center">
+<span class="font-headline-sm text-headline-sm text-text-primary font-bold">TOK</span>
+<p class="font-label-sm text-label-sm text-text-dim">Shibuya Tech Chai</p>
+</div>
+</div>
+</div>
+<!-- Bento 4: Muted Philosophy & Quotes (4 cols) -->
+<div class="md:col-span-4 bg-surface-overlay p-space-md md:p-space-lg rounded-2xl shadow-md flex flex-col justify-between">
+<div>
+<span class="material-symbols-outlined text-primary text-[28px]">format_quote</span>
+<p class="font-body-md text-body-md text-text-secondary italic mt-space-sm leading-relaxed">
+              "We shapes our buildings, thereafter they shape us. In the same way, the digital rooms we build dictate who we become."
+            </p>
+</div>
+<div class="pt-space-md">
+<span class="font-label-md text-label-md text-text-primary font-semibold block">The Chai Ethos</span>
+<span class="font-label-sm text-label-sm text-text-dim">Manifesto 2026</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 7: WHY CHAICIRCLE (3 LARGE STATEMENTS) -->
+<section class="w-full py-space-xl bg-surface-deep">
+<div class="max-w-7xl mx-auto px-margin-mobile md:px-margin">
+<div class="mb-space-lg max-w-xl">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-primary font-semibold">Purpose-Built Architecture</span>
+<h2 class="font-headline-lg text-headline-lg text-text-primary font-bold mt-1">Three principles that change everything.</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-lg">
+<!-- Statement 1 -->
+<div class="p-space-lg rounded-2xl bg-surface-canvas shadow-sm space-y-space-md flex flex-col justify-between">
+<div>
+<span class="font-mono text-primary font-bold text-[18px]">01 // DISCOVER</span>
+<h3 class="font-headline-md text-headline-md text-text-primary font-semibold mt-space-sm">Conversations worth joining.</h3>
+<p class="font-body-md text-body-md text-text-muted mt-space-xs leading-relaxed">
+              Skip the algorithmic lottery. Find active threads centered on questions and hypotheses rather than hot takes and performative outrage.
+            </p>
+</div>
+<div class="p-3 rounded-lg bg-surface-overlay text-text-secondary font-label-sm text-label-sm flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[18px]">search_check</span>
+<span>Semantically matched to your curiosities</span>
+</div>
+</div>
+<!-- Statement 2 -->
+<div class="p-space-lg rounded-2xl bg-surface-canvas shadow-sm space-y-space-md flex flex-col justify-between">
+<div>
+<span class="font-mono text-primary font-bold text-[18px]">02 // CONNECT</span>
+<h3 class="font-headline-md text-headline-md text-text-primary font-semibold mt-space-sm">Meet people who truly get it.</h3>
+<p class="font-body-md text-body-md text-text-muted mt-space-xs leading-relaxed">
+              When everyone in the circle shares domain context, you can skip the introductory jargon and jump straight to the nuanced ideas.
+            </p>
+</div>
+<div class="p-3 rounded-lg bg-surface-overlay text-text-secondary font-label-sm text-label-sm flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[18px]">interests</span>
+<span>High-density mutual interests</span>
+</div>
+</div>
+<!-- Statement 3 -->
+<div class="p-space-lg rounded-2xl bg-surface-canvas shadow-sm space-y-space-md flex flex-col justify-between">
+<div>
+<span class="font-mono text-primary font-bold text-[18px]">03 // BELONG</span>
+<h3 class="font-headline-md text-headline-md text-text-primary font-semibold mt-space-sm">Build your own circle.</h3>
+<p class="font-body-md text-body-md text-text-muted mt-space-xs leading-relaxed">
+              Start your own sovereign community with curated admission keys, cozy audio spaces, and persistent knowledge archives.
+            </p>
+</div>
+<div class="p-3 rounded-lg bg-surface-overlay text-text-secondary font-label-sm text-label-sm flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[18px]">nest_farsight_weather</span>
+<span>Host rooms that feel like home</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 8: INTERACTIVE COMMUNITY GRAPH (SIGNATURE VISUAL) -->
+<section class="w-full py-space-xl bg-surface-canvas relative overflow-hidden">
+<div class="max-w-7xl mx-auto px-margin-mobile md:px-margin">
+<div class="text-center max-w-3xl mx-auto mb-space-lg">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-primary font-semibold">Graph Topography</span>
+<h2 class="font-headline-lg text-headline-lg text-text-primary font-bold mt-1">People connect through shared interests.</h2>
+<p class="font-body-md text-body-md text-text-muted mt-2">Explore how conversations bridge people, topics, and communities seamlessly without rigid platform silos.</p>
+</div>
+<!-- Graph Container Canvas Mockup -->
+<div class="relative w-full h-[460px] rounded-2xl bg-surface-overlay shadow-2xl p-space-md flex items-center justify-center overflow-hidden">
+<!-- SVG Connecting Web -->
+<svg class="absolute inset-0 w-full h-full stroke-border-subtle" fill="none" viewbox="0 0 900 460">
+<!-- Connectors -->
+<line stroke="rgba(245, 158, 11, 0.4)" stroke-width="1.5" x1="450" x2="220" y1="230" y2="120"></line>
+<line stroke="rgba(245, 158, 11, 0.4)" stroke-width="1.5" x1="450" x2="680" y1="230" y2="110"></line>
+<line stroke="rgba(245, 158, 11, 0.4)" stroke-width="1.5" x1="450" x2="230" y1="230" y2="340"></line>
+<line stroke="rgba(245, 158, 11, 0.4)" stroke-width="1.5" x1="450" x2="670" y1="230" y2="350"></line>
+<line stroke="rgba(255, 255, 255, 0.08)" stroke-dasharray="4 4" stroke-width="1" x1="220" x2="680" y1="120" y2="110"></line>
+<line stroke="rgba(255, 255, 255, 0.08)" stroke-dasharray="4 4" stroke-width="1" x1="230" x2="670" y1="340" y2="350"></line>
+<!-- Orbit lines -->
+<circle cx="450" cy="230" r="180" stroke="rgba(245, 158, 11, 0.15)" stroke-dasharray="2 6" stroke-width="1"></circle>
+</svg>
+<!-- Center Epicenter Node -->
+<div class="relative z-10 flex flex-col items-center">
+<div class="w-20 h-20 rounded-full bg-gradient-to-tr from-primary-container to-tertiary p-1 shadow-[0_0_50px_rgba(245,158,11,0.4)]">
+<div class="w-full h-full rounded-full bg-surface-deep flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-[32px]">hub</span>
+</div>
+</div>
+<span class="mt-2 font-label-md text-label-md text-text-primary font-bold">Chai Nexus</span>
+<span class="font-label-sm text-[11px] text-primary">342 active bridges</span>
+</div>
+<!-- Sub Hub 1: Technology -->
+<div class="absolute top-12 left-10 md:left-32 flex flex-col items-center cursor-pointer group">
+<div class="w-14 h-14 rounded-full bg-surface-container-high border-2 border-primary/30 flex items-center justify-center group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-primary text-[24px]">terminal</span>
+</div>
+<span class="mt-1 font-label-md text-label-md text-text-primary font-semibold">Tech &amp; Systems</span>
+<span class="font-label-sm text-[11px] text-text-dim">4.2k nodes</span>
+</div>
+<!-- Sub Hub 2: Design -->
+<div class="absolute top-10 right-10 md:right-32 flex flex-col items-center cursor-pointer group">
+<div class="w-14 h-14 rounded-full bg-surface-container-high border-2 border-primary/30 flex items-center justify-center group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-primary text-[24px]">brush</span>
+</div>
+<span class="mt-1 font-label-md text-label-md text-text-primary font-semibold">Design &amp; Craft</span>
+<span class="font-label-sm text-[11px] text-text-dim">3.1k nodes</span>
+</div>
+<!-- Sub Hub 3: Sound -->
+<div class="absolute bottom-12 left-12 md:left-36 flex flex-col items-center cursor-pointer group">
+<div class="w-14 h-14 rounded-full bg-surface-container-high border-2 border-primary/30 flex items-center justify-center group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-primary text-[24px]">equalizer</span>
+</div>
+<span class="mt-1 font-label-md text-label-md text-text-primary font-semibold">Music &amp; Synth</span>
+<span class="font-label-sm text-[11px] text-text-dim">2.8k nodes</span>
+</div>
+<!-- Sub Hub 4: Humanities & Books -->
+<div class="absolute bottom-12 right-12 md:right-36 flex flex-col items-center cursor-pointer group">
+<div class="w-14 h-14 rounded-full bg-surface-container-high border-2 border-primary/30 flex items-center justify-center group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-primary text-[24px]">auto_stories</span>
+</div>
+<span class="mt-1 font-label-md text-label-md text-text-primary font-semibold">Literature</span>
+<span class="font-label-sm text-[11px] text-text-dim">1.9k nodes</span>
+</div>
+<!-- Interactive Drawer Overlay -->
+<div class="absolute bottom-4 left-1/2 -translate-x-1/2 px-4 py-2 rounded-full bg-surface-deep/90 shadow-xl backdrop-blur-md flex items-center gap-3 font-label-sm text-label-sm">
+<span class="flex items-center gap-1.5 text-text-primary">
+<span class="w-2 h-2 rounded-full bg-primary-container animate-ping"></span>
+            Cross-circle pollination: <strong class="text-primary">Designers + Engineers</strong> currently co-building
+          </span>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 9: CORE PHILOSOPHY -->
+<section class="w-full py-space-xl bg-surface-deep">
+<div class="max-w-7xl mx-auto px-margin-mobile md:px-margin">
+<div class="p-space-lg md:p-space-xl rounded-2xl bg-surface-canvas shadow-xl">
+<div class="max-w-3xl mb-space-lg">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-primary font-semibold">Human Centric Ethics</span>
+<h2 class="font-headline-lg text-headline-lg text-text-primary font-bold mt-1">Built around people, not algorithmic traps.</h2>
+<p class="font-body-md text-body-md text-text-muted mt-2">We questioned every engagement hack inherited from big social networks.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md">
+<div class="p-space-md rounded-xl bg-surface-overlay space-y-space-xs">
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-primary font-mono text-[14px]">01</div>
+<h3 class="font-headline-sm text-headline-sm text-text-primary font-semibold">No engagement bait</h3>
+<p class="font-body-sm text-body-sm text-text-muted leading-relaxed">
+              We do not measure success by time-on-screen or dopamine spikes. We measure meaningful interactions concluded per session.
+            </p>
+</div>
+<div class="p-space-md rounded-xl bg-surface-overlay space-y-space-xs">
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-primary font-mono text-[14px]">02</div>
+<h3 class="font-headline-sm text-headline-sm text-text-primary font-semibold">Context before clout</h3>
+<p class="font-body-sm text-body-sm text-text-muted leading-relaxed">
+              Follower counters are absent. Your credibility in a circle stems from your insights and helpfulness within that topic.
+            </p>
+</div>
+<div class="p-space-md rounded-xl bg-surface-overlay space-y-space-xs">
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-primary font-mono text-[14px]">03</div>
+<h3 class="font-headline-sm text-headline-sm text-text-primary font-semibold">Safe &amp; welcoming spaces</h3>
+<p class="font-body-sm text-body-sm text-text-muted leading-relaxed">
+              Member-moderated circles with granular invite codes and zero tolerance for harassment or low-effort promotional noise.
+            </p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 10: CLOSING CALL-TO-ACTION (ATMOSPHERIC RADIANCE) -->
+<section class="w-full py-space-xl bg-surface-deep relative overflow-hidden">
+<!-- Centered Ambient Radiant Core -->
+<div class="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-gradient-to-t from-primary-container/20 via-primary-container/5 to-transparent blur-[120px] rounded-full"></div>
+<div class="max-w-4xl mx-auto px-margin-mobile md:px-margin text-center relative z-10 py-space-lg">
+<div class="inline-flex items-center gap-2 p-1.5 px-4 rounded-full bg-surface-overlay/90 shadow-sm mb-space-md">
+<span class="w-2 h-2 rounded-full bg-primary-container animate-pulse"></span>
+<span class="font-label-sm text-label-sm text-primary font-semibold">The Kettle is Hot</span>
+</div>
+<h2 class="font-display text-display md:text-[64px] leading-tight text-text-primary font-bold">
+        Your circle is waiting.
+      </h2>
+<p class="font-body-lg text-body-lg text-text-muted max-w-xl mx-auto mt-space-md">
+        Join conversations that feel a little more like home. Free to join, open to all curious minds.
+      </p>
+<!-- Closing Buttons -->
+<div class="flex flex-col sm:flex-row items-center justify-center gap-3 mt-space-lg">
+<a class="w-full sm:w-auto px-8 py-3.5 rounded-full font-label-md text-label-md font-semibold text-on-primary bg-gradient-to-r from-primary-container to-secondary-container shadow-[0_0_30px_rgba(245,158,11,0.35)] hover:brightness-110 active:scale-[0.98] transition-all flex items-center justify-center gap-2 group" href="#">
+<span>Join ChaiCircle Now</span>
+<span class="material-symbols-outlined text-[18px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+<a class="w-full sm:w-auto px-6 py-3.5 rounded-full font-label-md text-label-md font-medium text-text-primary bg-surface-overlay hover:bg-surface-container transition-all flex items-center justify-center gap-2" href="#discover">
+<span>Explore Communities</span>
+</a>
+</div>
+<div class="mt-space-lg flex items-center justify-center gap-6 text-text-dim font-label-sm text-label-sm">
+<span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[16px] text-primary">lock</span> Encrypted &amp; Private</span>
+<span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[16px] text-primary">block</span> No Data Brokerage</span>
+<span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[16px] text-primary">spark</span> Community Run</span>
+</div>
+</div>
+</section>
+</div></main><footer class="w-full bg-surface-canvas border-t border-border-subtle"><div class="max-w-7xl mx-auto px-margin-mobile md:px-margin pt-space-xl pb-space-lg"><div class="flex flex-col md:flex-row md:items-start justify-between gap-space-xl mb-space-xl"><div class="space-y-space-sm max-w-sm"><div class="flex items-center gap-3"><img alt="ChaiCircle Minimal Logo" class="h-7 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1XsnaZ_d1G5UW2wNns1L9w0O-TJ8zWCuwVdN8fkU82qDVFlCbgLasaIsP8amHXENfW2m7VTg2D9kVHt2jrdjxdO6RB09VcO1x6k6fFPDqrWL3Re7VVLysz1oT-FAYYuN37cs4CPXtUX6b3LpNz94BpS3dW9WgtlOU67Erc3xLysemjxZD3kAh0qJKoQyr8nNPk5PR33vaGxxCALk1LSdWRk1Hw289Nl59g8hqYQMmLYXKRO4LaQfZcY_eU"/><span class="font-headline-sm text-headline-sm text-on-surface font-semibold">ChaiCircle</span></div><p class="font-body-sm text-body-sm text-text-dim">Where conversations spark circles. Warm collaboration for high-trust modern communities.</p></div><div class="grid grid-cols-2 sm:grid-cols-3 gap-space-lg"><div class="space-y-space-xs"><p class="font-label-md text-label-md text-on-surface font-medium mb-space-xs">Platform</p><ul class="space-y-space-xs"><li role="none"><a class="font-body-sm text-body-sm text-text-dim hover:text-primary transition-colors" data-path="home" href="#">Product</a></li><li role="none"><a class="font-body-sm text-body-sm text-text-dim hover:text-primary transition-colors" data-path="communities" href="#">Communities</a></li><li role="none"><a class="font-body-sm text-body-sm text-text-dim hover:text-primary transition-colors" data-path="discover" href="#">Discover</a></li></ul></div><div class="space-y-space-xs"><p class="font-label-md text-label-md text-on-surface font-medium mb-space-xs">Company</p><ul class="space-y-space-xs"><li role="none"><a class="font-body-sm text-body-sm text-text-dim hover:text-primary transition-colors" data-path="about" href="#">About</a></li><li role="none"><a class="font-body-sm text-body-sm text-text-dim hover:text-primary transition-colors" data-path="join" href="#">Join</a></li><li role="none"><a class="font-body-sm text-body-sm text-text-dim hover:text-primary transition-colors" data-path="login" href="#">Sign In</a></li></ul></div><div class="space-y-space-xs"><p class="font-label-md text-label-md text-on-surface font-medium mb-space-xs">Legal</p><ul class="space-y-space-xs"><li role="none"><a class="font-body-sm text-body-sm text-text-dim hover:text-primary transition-colors" data-path="privacy" href="#">Privacy</a></li><li role="none"><a class="font-body-sm text-body-sm text-text-dim hover:text-primary transition-colors" data-path="terms" href="#">Terms</a></li></ul></div></div></div><div class="pt-space-md border-t border-border-subtle flex flex-col sm:flex-row items-center justify-between gap-space-sm"><p class="font-body-sm text-body-sm text-text-dim text-center sm:text-left">© 2026 ChaiCircle. Built around people, not algorithms.</p><div class="flex items-center gap-space-md"><span class="w-2 h-2 rounded-full bg-primary-container inline-block animate-pulse"></span><span class="font-label-sm text-label-sm text-text-muted">Ambient Thermal Engine v2.4</span></div></div></div></footer><script>const toggleBtn = document.getElementById('mobile-nav-toggle'); const drawer = document.getElementById('mobile-nav-drawer'); if(toggleBtn && drawer) { toggleBtn.addEventListener('click', () => { drawer.classList.toggle('hidden'); }); }</script></body></html>
